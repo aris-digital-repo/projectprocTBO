@@ -174,6 +174,15 @@
 
     <!-- TAB 1: OVERVIEW -->
     <div id="view-overview" class="space-y-4">
+      <!-- FILTER TAHUN OVERVIEW -->
+      <div class="flex flex-wrap items-center justify-between gap-2 bg-slate-900/90 border border-slate-800 rounded-2xl px-4 py-2.5">
+        <div class="flex items-center gap-2">
+          <i data-lucide="filter" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span class="text-[11px] font-bold text-slate-400 uppercase">Filter Tahun</span>
+          <div id="overviewYearButtons" class="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800"></div>
+        </div>
+        <div id="overviewYearInfo" class="text-[11px] font-mono text-slate-500">Menampilkan semua tahun</div>
+      </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <!-- Vendor Cost Chart -->
         <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-xl">
@@ -720,6 +729,35 @@
     let currentTab = 'overview';
     let activeAnggaranFilter = 'ALL';
     let activeDatamartFilter = 'ALL';
+    let overviewYear = 'ALL';
+
+    function getOverviewItems() {
+      if (overviewYear === 'ALL') return appData.procurement;
+      return appData.procurement.filter(i => String(i.tahun).trim() === String(overviewYear));
+    }
+
+    function renderOverviewYearButtons() {
+      const box = document.getElementById('overviewYearButtons');
+      if (!box) return;
+      const years = Array.from(new Set(appData.procurement.map(i => String(i.tahun || '').trim()).filter(Boolean))).sort();
+      if (overviewYear !== 'ALL' && !years.includes(overviewYear)) overviewYear = 'ALL';
+      const mk = (val, label) => `<button onclick="setOverviewYear('${val}')" class="px-3 py-1 rounded-lg text-[11px] font-mono font-bold transition cursor-pointer ${overviewYear === val ? 'bg-amber-500 text-slate-950 shadow-xs' : 'text-slate-400 hover:text-white'}">${label}</button>`;
+      box.innerHTML = mk('ALL', 'Semua Tahun') + years.map(y => mk(y, y)).join('');
+      const info = document.getElementById('overviewYearInfo');
+      if (info) {
+        const n = getOverviewItems().length;
+        info.innerText = overviewYear === 'ALL' ? `Menampilkan semua tahun • ${n} item` : `Tahun ${overviewYear} • ${n} item`;
+      }
+    }
+
+    function setOverviewYear(val) {
+      overviewYear = val;
+      renderOverviewYearButtons();
+      updateProcurementKPI();
+      renderOverviewCards();
+      renderCharts();
+      lucide.createIcons();
+    }
 
     let vendorChartInstance = null;
     let statusChartInstance = null;
@@ -1111,6 +1149,7 @@
     function onDataLoaded() {
       document.getElementById('lastUpdatedBadge').innerText = `Sinkronisasi: ${new Date().toLocaleTimeString('id-ID')} WIB (Live)`;
       populateStatusDropdowns();
+      renderOverviewYearButtons();
       updateProcurementKPI();
       renderOverviewCards();
       renderPaymentCards();
@@ -1145,6 +1184,7 @@
         }
       }
 
+      updateProcurementKPI();
       const procKpi = document.getElementById('procurementKpiSection');
       if (['anggaran', 'datamart', 'audit'].includes(tabId)) {
         procKpi.classList.add('hidden');
@@ -1156,7 +1196,7 @@
     }
 
     function updateProcurementKPI() {
-      const items = appData.procurement;
+      const items = currentTab === 'overview' ? getOverviewItems() : appData.procurement;
       const totalCost = items.reduce((s, i) => s + (i.cost || 0), 0);
       const opexCost = items.filter(i => (i.jenisAnggaran || '').toUpperCase().includes('OPEX')).reduce((s, i) => s + (i.cost || 0), 0);
       const capexCost = items.filter(i => (i.jenisAnggaran || '').toUpperCase().includes('CAPEX')).reduce((s, i) => s + (i.cost || 0), 0);
@@ -1253,7 +1293,7 @@
 
     function renderOverviewCards() {
       const search = (document.getElementById('overviewSearchInput')?.value || '').toLowerCase();
-      const filtered = appData.procurement.filter(item => {
+      const filtered = getOverviewItems().filter(item => {
         return !search ||
           (item.namaProker && item.namaProker.toLowerCase().includes(search)) ||
           (item.namaTask && item.namaTask.toLowerCase().includes(search)) ||
@@ -1440,7 +1480,7 @@
       if (statusChartInstance) statusChartInstance.destroy();
 
       const vendorCosts = {};
-      appData.procurement.forEach(i => {
+      getOverviewItems().forEach(i => {
         const v = (i.vendor || 'In-House').trim();
         vendorCosts[v] = (vendorCosts[v] || 0) + (i.cost || 0);
       });
@@ -1467,7 +1507,7 @@
       }
 
       let ongoingCount = 0, doneCount = 0, otherCount = 0;
-      appData.procurement.forEach(i => {
+      getOverviewItems().forEach(i => {
         const s = (i.status || '').toLowerCase();
         if (s.includes('done') || s.includes('selesai')) doneCount++;
         else if (s.includes('on going') || s.includes('ongoing')) ongoingCount++;
