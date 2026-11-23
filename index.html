@@ -19,43 +19,43 @@
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .font-mono { font-family: 'JetBrains Mono', monospace; }
     .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(51, 65, 85, 0.8); border-radius: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #E4F1E8; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #B9D8C4; border-radius: 4px; }
   </style>
 <script src="/_aistudio-iframe.js?v=1f94f900"></script></head>
-<body class="bg-slate-950 text-slate-100 min-h-screen pb-12 selection:bg-emerald-500 selection:text-white">
+<body class="bg-[#F2F9F4] text-[#12392A] min-h-screen pb-12 selection:bg-[#22A861] selection:text-white">
 
   <!-- TOP HEADER BAR -->
-  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 sm:px-6 py-3">
+  <header class="sticky top-0 z-40 bg-[#00793F] border-b-4 border-[#F5B800] px-4 sm:px-6 py-3 shadow-md">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-900/30 shrink-0">
-          <i data-lucide="layout-dashboard" class="w-5 h-5 text-white"></i>
+        <div class="w-9 h-9 rounded-xl bg-[#F5B800] flex items-center justify-center shadow-md shrink-0">
+          <i data-lucide="layout-dashboard" class="w-5 h-5 text-[#12392A]"></i>
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="text-sm sm:text-base font-bold text-white tracking-tight">Executive Procurement & Datamart Dashboard</h1>
-            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <h1 class="text-sm sm:text-base font-bold text-white tracking-tight">Executive Procurement &amp; Datamart Dashboard</h1>
+            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-white/15 text-white border border-white/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#F5B800] animate-pulse"></span>
               LIVE GOOGLE SHEET
             </span>
           </div>
-          <p class="text-[11px] text-slate-400">Monitoring Kontrak Vendor, Alokasi Anggaran OPEX/CAPEX, Request Datamart & Data Audit Promo</p>
+          <p class="text-[11px] text-[#CDEBD8]">Monitoring Kontrak Vendor, Alokasi Anggaran OPEX/CAPEX, Request Datamart &amp; Data Audit Promo</p>
         </div>
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
-        <button onclick="openAIModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold shadow-md shadow-emerald-950/40 transition active:scale-95 cursor-pointer">
+        <button onclick="openAIModal()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#F5B800] hover:bg-[#E5AB00] text-[#12392A] text-xs font-bold shadow-md transition active:scale-95 cursor-pointer">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
           <span>AI Insights</span>
         </button>
 
-        <button onclick="exportCurrentViewCSV()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 text-xs font-medium transition cursor-pointer" title="Export CSV">
+        <button onclick="exportCurrentViewCSV()" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 text-white text-xs font-medium transition cursor-pointer" title="Export CSV">
           <i data-lucide="download" class="w-3.5 h-3.5"></i>
           <span class="hidden sm:inline">Export</span>
         </button>
 
-        <button onclick="loadAllData()" id="refreshBtn" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 transition cursor-pointer" title="Refresh Data">
+        <button onclick="loadAllData()" id="refreshBtn" class="p-2 rounded-xl bg-white/15 hover:bg-white/25 border border-white/30 text-white transition cursor-pointer" title="Refresh Data">
           <i data-lucide="refresh-cw" class="w-4 h-4"></i>
         </button>
       </div>
@@ -66,39 +66,39 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-4 space-y-4">
 
     <!-- Navigation Tabs (Lengkap 7 Menu) -->
-    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
-      <div class="flex flex-wrap items-center gap-1 bg-slate-900 p-1 rounded-xl border border-slate-800">
-        <button onclick="switchTab('overview')" id="tab-overview" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow-xs">
+    <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[#CFE5D6] pb-2">
+      <div class="flex flex-wrap items-center gap-1 bg-[#FFFFFF] p-1 rounded-xl border border-[#CFE5D6]">
+        <button onclick="switchTab('overview')" id="tab-overview" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition bg-[#00793F] text-white shadow-xs">
           <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
           <span>Overview</span>
         </button>
-        <button onclick="switchTab('payments')" id="tab-payments" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white">
+        <button onclick="switchTab('payments')" id="tab-payments" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-[#4B6B5B] hover:text-[#12392A]">
           <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
           <span>Payment Deadlines</span>
         </button>
-        <button onclick="switchTab('quota')" id="tab-quota" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white">
+        <button onclick="switchTab('quota')" id="tab-quota" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-[#4B6B5B] hover:text-[#12392A]">
           <i data-lucide="database" class="w-3.5 h-3.5"></i>
           <span>Quota Tracker</span>
         </button>
-        <button onclick="switchTab('table')" id="tab-table" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white">
+        <button onclick="switchTab('table')" id="tab-table" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-[#4B6B5B] hover:text-[#12392A]">
           <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5"></i>
           <span>Procurement Ledger</span>
         </button>
-        <button onclick="switchTab('anggaran')" id="tab-anggaran" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white">
-          <i data-lucide="dollar-sign" class="w-3.5 h-3.5 text-emerald-400"></i>
+        <button onclick="switchTab('anggaran')" id="tab-anggaran" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-[#4B6B5B] hover:text-[#12392A]">
+          <i data-lucide="dollar-sign" class="w-3.5 h-3.5 text-[#00793F]"></i>
           <span>Anggaran</span>
         </button>
-        <button onclick="switchTab('datamart')" id="tab-datamart" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white">
-          <i data-lucide="folder-git-2" class="w-3.5 h-3.5 text-blue-400"></i>
+        <button onclick="switchTab('datamart')" id="tab-datamart" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-[#4B6B5B] hover:text-[#12392A]">
+          <i data-lucide="folder-git-2" class="w-3.5 h-3.5 text-[#1E6FBF]"></i>
           <span>Request Datamart</span>
         </button>
-        <button onclick="switchTab('audit')" id="tab-audit" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-purple-400 hover:text-white">
-          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-400"></i>
+        <button onclick="switchTab('audit')" id="tab-audit" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-[#7B3FC4] hover:text-[#12392A]">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#7B3FC4]"></i>
           <span>Data Audit Promo</span>
         </button>
       </div>
 
-      <div id="lastUpdatedBadge" class="text-[11px] text-slate-500 font-mono hidden md:block">
+      <div id="lastUpdatedBadge" class="text-[11px] text-[#6B8A7A] font-mono hidden md:block">
         Sinkronisasi: Memuat data...
       </div>
     </div>
@@ -106,67 +106,67 @@
     <!-- 5 KOLOM KPI SECTION -->
     <section id="procurementKpiSection" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
       <!-- 1. Total Nilai Kontrak -->
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5 flex flex-col justify-between shadow-xs">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-3.5 flex flex-col justify-between shadow-xs">
         <div class="flex items-center justify-between">
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Total Nilai Kontrak</span>
-          <div class="p-1.5 rounded-lg bg-emerald-950/80 text-emerald-400"><i data-lucide="dollar-sign" class="w-4 h-4"></i></div>
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Total Nilai Kontrak</span>
+          <div class="p-1.5 rounded-lg bg-[#DDF1E4]/80 text-[#00793F]"><i data-lucide="dollar-sign" class="w-4 h-4"></i></div>
         </div>
         <div class="my-1">
-          <div id="kpiTotalCost" class="text-base sm:text-lg font-bold font-mono text-white">Rp 0</div>
-          <div id="kpiBudgetBreakdown" class="text-[10px] text-slate-400 mt-0.5 flex gap-1.5 font-mono"><span>OPEX: -</span> • <span>CAPEX: -</span></div>
+          <div id="kpiTotalCost" class="text-base sm:text-lg font-bold font-mono text-[#12392A]">Rp 0</div>
+          <div id="kpiBudgetBreakdown" class="text-[10px] text-[#4B6B5B] mt-0.5 flex gap-1.5 font-mono"><span>OPEX: -</span> • <span>CAPEX: -</span></div>
         </div>
       </div>
 
       <!-- 2. Total Item Pengadaan -->
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5 flex flex-col justify-between shadow-xs">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-3.5 flex flex-col justify-between shadow-xs">
         <div class="flex items-center justify-between">
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Total Item Pengadaan</span>
-          <div class="p-1.5 rounded-lg bg-blue-950/80 text-blue-400"><i data-lucide="layers" class="w-4 h-4"></i></div>
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Total Item Pengadaan</span>
+          <div class="p-1.5 rounded-lg bg-[#E3F0FB]/80 text-[#1E6FBF]"><i data-lucide="layers" class="w-4 h-4"></i></div>
         </div>
         <div class="my-1">
-          <div id="kpiTotalItems" class="text-base sm:text-lg font-bold font-mono text-white">0 Item</div>
-          <div id="kpiRkfBreakdown" class="text-[10px] text-emerald-400 font-mono font-bold mt-0.5">RKF: 0 • Non-RKF: 0</div>
+          <div id="kpiTotalItems" class="text-base sm:text-lg font-bold font-mono text-[#12392A]">0 Item</div>
+          <div id="kpiRkfBreakdown" class="text-[10px] text-[#00793F] font-mono font-bold mt-0.5">RKF: 0 • Non-RKF: 0</div>
         </div>
       </div>
 
       <!-- 3. Jatuh Tempo Urgent -->
-      <div onclick="filterByPriority('Urgent')" class="bg-slate-900/90 border border-rose-900/40 hover:border-rose-700/80 rounded-2xl p-3.5 flex flex-col justify-between shadow-xs cursor-pointer transition group">
+      <div onclick="filterByPriority('Urgent')" class="bg-[#FFFFFF]/90 border border-[#F2C4BC]/40 hover:border-[#E49B8F]/80 rounded-2xl p-3.5 flex flex-col justify-between shadow-xs cursor-pointer transition group">
         <div class="flex items-center justify-between">
-          <span class="text-[11px] font-bold text-rose-400 uppercase">Jatuh Tempo Urgent</span>
-          <div class="p-1.5 rounded-lg bg-rose-950 text-rose-400 group-hover:scale-110 transition"><i data-lucide="alert-triangle" class="w-4 h-4"></i></div>
+          <span class="text-[11px] font-bold text-[#C0392B] uppercase">Jatuh Tempo Urgent</span>
+          <div class="p-1.5 rounded-lg bg-[#FDE8E4] text-[#C0392B] group-hover:scale-110 transition"><i data-lucide="alert-triangle" class="w-4 h-4"></i></div>
         </div>
         <div class="my-1">
-          <div id="kpiUrgentCount" class="text-base sm:text-lg font-bold font-mono text-rose-400">0</div>
-          <div class="text-[10px] text-rose-400/80 mt-0.5">≤30 hari / perlu SPK & Adendum</div>
+          <div id="kpiUrgentCount" class="text-base sm:text-lg font-bold font-mono text-[#C0392B]">0</div>
+          <div class="text-[10px] text-[#C0392B]/80 mt-0.5">≤30 hari / perlu SPK & Adendum</div>
         </div>
       </div>
 
       <!-- 4. Status On Going -->
-      <div onclick="filterByStatus('On going')" class="bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-2xl p-3.5 flex flex-col justify-between shadow-xs cursor-pointer transition">
+      <div onclick="filterByStatus('On going')" class="bg-[#FFFFFF]/90 border border-[#CFE5D6] hover:border-[#B9D8C4] rounded-2xl p-3.5 flex flex-col justify-between shadow-xs cursor-pointer transition">
         <div class="flex items-center justify-between">
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Status On going</span>
-          <div class="p-1.5 rounded-lg bg-indigo-950/80 text-indigo-400"><i data-lucide="clock" class="w-4 h-4"></i></div>
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Status On going</span>
+          <div class="p-1.5 rounded-lg bg-[#E8EAFB]/80 text-[#4B52C4]"><i data-lucide="clock" class="w-4 h-4"></i></div>
         </div>
         <div class="my-1">
-          <div id="kpiOngoingCount" class="text-base sm:text-lg font-bold font-mono text-indigo-300">0</div>
-          <div class="text-[10px] text-slate-400 mt-0.5">Sedang dalam pelaksanaan</div>
+          <div id="kpiOngoingCount" class="text-base sm:text-lg font-bold font-mono text-[#4047B0]">0</div>
+          <div class="text-[10px] text-[#4B6B5B] mt-0.5">Sedang dalam pelaksanaan</div>
         </div>
       </div>
 
       <!-- 5. Status Proyek RKF -->
-      <div onclick="filterByRkfOnly()" class="bg-slate-900/90 border border-emerald-900/40 hover:border-emerald-700/80 rounded-2xl p-3.5 flex flex-col justify-between shadow-xs cursor-pointer transition group">
+      <div onclick="filterByRkfOnly()" class="bg-[#FFFFFF]/90 border border-[#A8D8BC]/40 hover:border-[#7CC49A]/80 rounded-2xl p-3.5 flex flex-col justify-between shadow-xs cursor-pointer transition group">
         <div class="flex items-center justify-between">
-          <span class="text-[11px] font-bold text-emerald-400 uppercase">Status Proyek RKF</span>
-          <div class="p-1.5 rounded-lg bg-emerald-950 text-emerald-400 group-hover:scale-110 transition"><i data-lucide="target" class="w-4 h-4"></i></div>
+          <span class="text-[11px] font-bold text-[#00793F] uppercase">Status Proyek RKF</span>
+          <div class="p-1.5 rounded-lg bg-[#DDF1E4] text-[#00793F] group-hover:scale-110 transition"><i data-lucide="target" class="w-4 h-4"></i></div>
         </div>
         <div class="my-1">
           <div class="flex items-baseline gap-1.5">
-            <span id="kpiRkfOngoing" class="text-base sm:text-lg font-bold font-mono text-emerald-300">0</span>
-            <span class="text-xs font-medium text-slate-400">Berjalan</span>
+            <span id="kpiRkfOngoing" class="text-base sm:text-lg font-bold font-mono text-[#00693A]">0</span>
+            <span class="text-xs font-medium text-[#4B6B5B]">Berjalan</span>
           </div>
-          <div id="kpiRkfSecondary" class="text-[10px] text-slate-400 mt-0.5 font-mono">
-            <span class="text-amber-400 font-bold" id="kpiRkfPending">0 Belum Mulai</span>
-            <span id="kpiRkfDoneWrapper" class="hidden">• <span class="text-emerald-400 font-bold" id="kpiRkfDone">0 Selesai</span></span>
+          <div id="kpiRkfSecondary" class="text-[10px] text-[#4B6B5B] mt-0.5 font-mono">
+            <span class="text-[#A87300] font-bold" id="kpiRkfPending">0 Belum Mulai</span>
+            <span id="kpiRkfDoneWrapper" class="hidden">• <span class="text-[#00793F] font-bold" id="kpiRkfDone">0 Selesai</span></span>
           </div>
         </div>
       </div>
@@ -175,61 +175,61 @@
     <!-- TAB 1: OVERVIEW -->
     <div id="view-overview" class="space-y-4">
       <!-- FILTER TAHUN OVERVIEW -->
-      <div class="flex flex-wrap items-center justify-between gap-2 bg-slate-900/90 border border-slate-800 rounded-2xl px-4 py-2.5">
+      <div class="flex flex-wrap items-center justify-between gap-2 bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl px-4 py-2.5">
         <div class="flex items-center gap-2">
-          <i data-lucide="filter" class="w-3.5 h-3.5 text-amber-400"></i>
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Filter Tahun</span>
-          <div id="overviewYearButtons" class="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800"></div>
+          <i data-lucide="filter" class="w-3.5 h-3.5 text-[#A87300]"></i>
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Filter Tahun</span>
+          <div id="overviewYearButtons" class="flex items-center gap-1 bg-[#F2F9F4] p-1 rounded-xl border border-[#CFE5D6]"></div>
         </div>
-        <div id="overviewYearInfo" class="text-[11px] font-mono text-slate-500">Menampilkan semua tahun</div>
+        <div id="overviewYearInfo" class="text-[11px] font-mono text-[#6B8A7A]">Menampilkan semua tahun</div>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <!-- Vendor Cost Chart -->
-        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-xl">
-          <div class="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
+        <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-4 shadow-xl">
+          <div class="flex items-center justify-between mb-3 border-b border-[#CFE5D6] pb-2">
             <div>
-              <h3 class="text-xs font-bold text-slate-200 uppercase tracking-tight">Alokasi Budgeting per Vendor</h3>
-              <p class="text-[10px] text-slate-400">Total nilai kontrak SPK per vendor mitra</p>
+              <h3 class="text-xs font-bold text-[#1D4636] uppercase tracking-tight">Alokasi Budgeting per Vendor</h3>
+              <p class="text-[10px] text-[#4B6B5B]">Total nilai kontrak SPK per vendor mitra</p>
             </div>
-            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-md">BAR CHART</span>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-[#22A861]/10 text-[#00793F] border border-[#22A861]/30 rounded-md">BAR CHART</span>
           </div>
           <div class="h-60 relative"><canvas id="vendorChart"></canvas></div>
         </div>
 
         <!-- Status Breakdown Chart -->
-        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 shadow-xl">
-          <div class="flex items-center justify-between mb-3 border-b border-slate-800 pb-2">
+        <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-4 shadow-xl">
+          <div class="flex items-center justify-between mb-3 border-b border-[#CFE5D6] pb-2">
             <div>
-              <h3 class="text-xs font-bold text-slate-200 uppercase tracking-tight">Proporsi Status Pelaksanaan Proyek</h3>
-              <p class="text-[10px] text-slate-400">Persentase progres seluruh proyek</p>
+              <h3 class="text-xs font-bold text-[#1D4636] uppercase tracking-tight">Proporsi Status Pelaksanaan Proyek</h3>
+              <p class="text-[10px] text-[#4B6B5B]">Persentase progres seluruh proyek</p>
             </div>
-            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-blue-500/10 text-blue-400 border border-blue-500/30 rounded-md">PIE CHART</span>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-[#1E6FBF]/10 text-[#1E6FBF] border border-[#1E6FBF]/30 rounded-md">PIE CHART</span>
           </div>
           <div class="h-60 relative flex items-center justify-center"><canvas id="statusChart"></canvas></div>
         </div>
       </div>
 
       <!-- Quick Deadline Section -->
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 space-y-3">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-2.5">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-4 space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#CFE5D6] pb-2.5">
           <div>
-            <h3 class="text-xs font-bold text-white uppercase tracking-tight">Critical Payment Deadlines & Schedule Kontrak</h3>
-            <p class="text-[11px] text-slate-400">Pantau jatuh tempo, kuartal, administrasi, dan link dokumen pendukung</p>
+            <h3 class="text-xs font-bold text-[#12392A] uppercase tracking-tight">Critical Payment Deadlines & Schedule Kontrak</h3>
+            <p class="text-[11px] text-[#4B6B5B]">Pantau jatuh tempo, kuartal, administrasi, dan link dokumen pendukung</p>
           </div>
-          <button onclick="switchTab('payments')" class="text-xs font-bold text-emerald-400 hover:underline inline-flex items-center gap-1 cursor-pointer">
+          <button onclick="switchTab('payments')" class="text-xs font-bold text-[#00793F] hover:underline inline-flex items-center gap-1 cursor-pointer">
             <span>Lihat Semua Jadwal</span>
             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
           </button>
         </div>
 
         <div class="relative w-full">
-          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-slate-400"></i>
+          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-[#4B6B5B]"></i>
           <input 
             type="text" 
             id="overviewSearchInput" 
             oninput="renderOverviewCards()" 
             placeholder="Cari jadwal pembayaran berdasarkan vendor, task, proker, PIC, status, output, quartal, adm..." 
-            class="w-full pl-9 pr-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500 transition"
+            class="w-full pl-9 pr-3 py-2 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl text-xs text-[#12392A] placeholder-[#7C9A8A] focus:outline-hidden focus:border-[#22A861] transition"
           >
         </div>
 
@@ -239,58 +239,58 @@
 
     <!-- TAB 2: PAYMENT DEADLINES -->
     <div id="view-payments" class="hidden space-y-4">
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 space-y-3">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-4 space-y-3">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-3 border-b border-[#CFE5D6]">
           <div>
-            <h2 class="text-sm font-bold text-white uppercase tracking-tight">Schedule & Prioritas Jatuh Tempo Pembayaran</h2>
-            <p class="text-[11px] text-slate-400">Monitoring verifikasi BAST, SPK, status pengerjaan, kuartal target, dan link dokumen penagihan</p>
+            <h2 class="text-sm font-bold text-[#12392A] uppercase tracking-tight">Schedule & Prioritas Jatuh Tempo Pembayaran</h2>
+            <p class="text-[11px] text-[#4B6B5B]">Monitoring verifikasi BAST, SPK, status pengerjaan, kuartal target, dan link dokumen penagihan</p>
           </div>
           
           <div class="flex flex-wrap items-center gap-2">
             <!-- Filter Quartal di Tab Payment -->
-            <div class="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 shadow-2xs">
-              <span class="text-[10px] font-bold text-purple-400 uppercase">Quartal:</span>
-              <select id="paymentQuartalDropdown" onchange="renderPaymentCards()" class="bg-transparent text-xs font-semibold text-purple-300 focus:outline-hidden cursor-pointer">
-                <option value="ALL" class="bg-slate-900 text-white">Semua Quartal</option>
+            <div class="flex items-center gap-1.5 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl px-2.5 py-1.5 shadow-2xs">
+              <span class="text-[10px] font-bold text-[#7B3FC4] uppercase">Quartal:</span>
+              <select id="paymentQuartalDropdown" onchange="renderPaymentCards()" class="bg-transparent text-xs font-semibold text-[#6B33B0] focus:outline-hidden cursor-pointer">
+                <option value="ALL" class="bg-[#FFFFFF] text-[#12392A]">Semua Quartal</option>
               </select>
             </div>
 
-            <div class="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 shadow-2xs">
-              <span class="text-[10px] font-bold text-slate-400 uppercase">Status:</span>
-              <select id="paymentStatusDropdown" onchange="renderPaymentCards()" class="bg-transparent text-xs font-semibold text-white focus:outline-hidden cursor-pointer">
-                <option value="ALL" class="bg-slate-900 text-white">Semua Status</option>
+            <div class="flex items-center gap-1.5 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl px-2.5 py-1.5 shadow-2xs">
+              <span class="text-[10px] font-bold text-[#4B6B5B] uppercase">Status:</span>
+              <select id="paymentStatusDropdown" onchange="renderPaymentCards()" class="bg-transparent text-xs font-semibold text-[#12392A] focus:outline-hidden cursor-pointer">
+                <option value="ALL" class="bg-[#FFFFFF] text-[#12392A]">Semua Status</option>
               </select>
             </div>
 
-            <div class="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 shadow-2xs">
-              <span class="text-[10px] font-bold text-slate-400 uppercase">Kategori:</span>
-              <select id="paymentRkfDropdown" onchange="renderPaymentCards()" class="bg-transparent text-xs font-semibold text-white focus:outline-hidden cursor-pointer">
-                <option value="ALL" class="bg-slate-900 text-white">Semua RKF</option>
-                <option value="RKF" class="bg-slate-900 text-emerald-400">Hanya RKF</option>
-                <option value="Non-RKF" class="bg-slate-900 text-slate-300">Hanya Non-RKF</option>
+            <div class="flex items-center gap-1.5 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl px-2.5 py-1.5 shadow-2xs">
+              <span class="text-[10px] font-bold text-[#4B6B5B] uppercase">Kategori:</span>
+              <select id="paymentRkfDropdown" onchange="renderPaymentCards()" class="bg-transparent text-xs font-semibold text-[#12392A] focus:outline-hidden cursor-pointer">
+                <option value="ALL" class="bg-[#FFFFFF] text-[#12392A]">Semua RKF</option>
+                <option value="RKF" class="bg-[#FFFFFF] text-[#00793F]">Hanya RKF</option>
+                <option value="Non-RKF" class="bg-[#FFFFFF] text-[#2F5545]">Hanya Non-RKF</option>
               </select>
             </div>
 
-            <div class="flex items-center gap-1.5 bg-slate-950 border border-slate-800 rounded-xl px-2.5 py-1.5 shadow-2xs">
-              <span class="text-[10px] font-bold text-slate-400 uppercase">Deadline:</span>
-              <select id="paymentPriorityDropdown" onchange="renderPaymentCards()" class="bg-transparent text-xs font-semibold text-white focus:outline-hidden cursor-pointer">
-                <option value="ALL" class="bg-slate-900 text-white">Semua Waktu</option>
-                <option value="Urgent" class="bg-slate-900 text-rose-400">Urgent (≤30 Hari)</option>
-                <option value="Upcoming" class="bg-slate-900 text-amber-400">Soon (31-60 Hari)</option>
-                <option value="Safe" class="bg-slate-900 text-emerald-400">Safe (>60 Hari)</option>
+            <div class="flex items-center gap-1.5 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl px-2.5 py-1.5 shadow-2xs">
+              <span class="text-[10px] font-bold text-[#4B6B5B] uppercase">Deadline:</span>
+              <select id="paymentPriorityDropdown" onchange="renderPaymentCards()" class="bg-transparent text-xs font-semibold text-[#12392A] focus:outline-hidden cursor-pointer">
+                <option value="ALL" class="bg-[#FFFFFF] text-[#12392A]">Semua Waktu</option>
+                <option value="Urgent" class="bg-[#FFFFFF] text-[#C0392B]">Urgent (≤30 Hari)</option>
+                <option value="Upcoming" class="bg-[#FFFFFF] text-[#A87300]">Soon (31-60 Hari)</option>
+                <option value="Safe" class="bg-[#FFFFFF] text-[#00793F]">Safe (>60 Hari)</option>
               </select>
             </div>
           </div>
         </div>
 
         <div class="relative w-full">
-          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-slate-400"></i>
+          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-[#4B6B5B]"></i>
           <input 
             type="text" 
             id="paymentsSearchInput" 
             oninput="renderPaymentCards()" 
             placeholder="Cari nama proker, task, vendor, PIC, RKF, status, quartal, expected adm..." 
-            class="w-full pl-9 pr-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500 transition"
+            class="w-full pl-9 pr-3 py-2 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl text-xs text-[#12392A] placeholder-[#7C9A8A] focus:outline-hidden focus:border-[#22A861] transition"
           >
         </div>
 
@@ -300,13 +300,13 @@
 
     <!-- TAB 3: QUOTA TRACKER -->
     <div id="view-quota" class="hidden space-y-4">
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4">
-        <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-4">
+        <div class="flex items-center justify-between pb-3 border-b border-[#CFE5D6] mb-4">
           <div>
-            <h2 class="text-sm font-bold text-white uppercase tracking-tight">3rd Party API Service Quota & Usage</h2>
-            <p class="text-[11px] text-slate-400">Monitoring kuota OCR KTP, Liveness, Face Compare, & Gateway</p>
+            <h2 class="text-sm font-bold text-[#12392A] uppercase tracking-tight">3rd Party API Service Quota & Usage</h2>
+            <p class="text-[11px] text-[#4B6B5B]">Monitoring kuota OCR KTP, Liveness, Face Compare, & Gateway</p>
           </div>
-          <span class="px-2.5 py-0.5 text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-md uppercase">QUOTA MONITOR</span>
+          <span class="px-2.5 py-0.5 text-[10px] font-mono font-bold bg-[#F5B800]/20 text-[#7A5600] border border-[#F5B800]/30 rounded-md uppercase">QUOTA MONITOR</span>
         </div>
         <div id="quotaCardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
       </div>
@@ -314,39 +314,39 @@
 
     <!-- TAB 4: PROCUREMENT LEDGER -->
     <div id="view-table" class="hidden space-y-3">
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3 flex flex-col md:flex-row gap-2">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-3 flex flex-col md:flex-row gap-2">
         <div class="relative flex-1">
-          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-slate-400"></i>
-          <input type="text" id="tableSearchInput" oninput="renderMainTable()" placeholder="Cari nama proker, task, vendor, PIC, output, quartal, adm..." class="w-full pl-9 pr-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500">
+          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-[#4B6B5B]"></i>
+          <input type="text" id="tableSearchInput" oninput="renderMainTable()" placeholder="Cari nama proker, task, vendor, PIC, output, quartal, adm..." class="w-full pl-9 pr-3 py-2 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl text-xs text-[#12392A] placeholder-[#7C9A8A] focus:outline-hidden focus:border-[#22A861]">
         </div>
         
         <!-- FILTER TAHUN (KOLOM D) -->
-        <select id="tableYearFilter" onchange="renderMainTable()" class="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-amber-400 font-bold focus:outline-hidden">
+        <select id="tableYearFilter" onchange="renderMainTable()" class="bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl px-3 py-2 text-xs text-[#A87300] font-bold focus:outline-hidden">
           <option value="ALL">Semua Tahun</option>
         </select>
 
         <!-- FILTER QUARTAL EXPECTED (KOLOM U) -->
-        <select id="tableQuartalFilter" onchange="renderMainTable()" class="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-purple-400 font-bold focus:outline-hidden">
+        <select id="tableQuartalFilter" onchange="renderMainTable()" class="bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl px-3 py-2 text-xs text-[#7B3FC4] font-bold focus:outline-hidden">
           <option value="ALL">Semua Quartal</option>
         </select>
 
         <!-- FILTER STATUS -->
-        <select id="tableStatusFilter" onchange="renderMainTable()" class="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-300 focus:outline-hidden">
+        <select id="tableStatusFilter" onchange="renderMainTable()" class="bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl px-3 py-2 text-xs text-[#2F5545] focus:outline-hidden">
           <option value="ALL">Semua Status</option>
         </select>
 
         <!-- FILTER RKF -->
-        <select id="tableRkfFilter" onchange="renderMainTable()" class="bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-300 focus:outline-hidden">
+        <select id="tableRkfFilter" onchange="renderMainTable()" class="bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl px-3 py-2 text-xs text-[#2F5545] focus:outline-hidden">
           <option value="ALL">Semua Tipe RKF</option>
           <option value="RKF">Hanya RKF</option>
           <option value="Non-RKF">Hanya Non-RKF</option>
         </select>
       </div>
 
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl overflow-hidden shadow-xl">
         <div class="overflow-x-auto custom-scrollbar">
-          <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-950/80 border-b border-slate-800 text-slate-400 uppercase text-[10px] font-bold sticky top-0">
+          <table class="w-full text-left text-xs text-[#2F5545]">
+            <thead class="bg-[#F2F9F4]/80 border-b border-[#CFE5D6] text-[#4B6B5B] uppercase text-[10px] font-bold sticky top-0">
               <tr>
                 <th class="p-3 w-10 text-center">ID</th>
                 <th class="p-3 text-center">Tahun</th>
@@ -363,10 +363,10 @@
                 <th class="p-3 text-center">Aksi</th>
               </tr>
             </thead>
-            <tbody id="mainTableBody" class="divide-y divide-slate-800/60"></tbody>
+            <tbody id="mainTableBody" class="divide-y divide-[#CFE5D6]/60"></tbody>
           </table>
         </div>
-        <div class="p-3 bg-slate-950/60 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+        <div class="p-3 bg-[#F2F9F4]/60 border-t border-[#CFE5D6] flex items-center justify-between text-[11px] font-mono text-[#4B6B5B]">
           <span id="tableCountInfo">Memuat...</span>
           <span>LIVE PROCUREMENT LEDGER</span>
         </div>
@@ -376,44 +376,44 @@
     <!-- TAB 5: ANGGARAN -->
     <div id="view-anggaran" class="hidden space-y-4">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Total Anggaran 2026</span>
-          <div id="kpiAng2026" class="text-xl font-bold font-mono text-emerald-400 mt-1">Rp 0</div>
-          <div id="kpiAngOpexCapex" class="text-[10px] text-slate-500 font-mono mt-1">OPEX: - • CAPEX: -</div>
+        <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl p-4">
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Total Anggaran 2026</span>
+          <div id="kpiAng2026" class="text-xl font-bold font-mono text-[#00793F] mt-1">Rp 0</div>
+          <div id="kpiAngOpexCapex" class="text-[10px] text-[#6B8A7A] font-mono mt-1">OPEX: - • CAPEX: -</div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Forecasting Cost 2027</span>
-          <div id="kpiAng2027" class="text-xl font-bold font-mono text-blue-400 mt-1">Rp 0</div>
-          <div class="text-[10px] text-slate-500 font-mono mt-1">Estimasi Kebutuhan Biaya</div>
+        <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl p-4">
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Forecasting Cost 2027</span>
+          <div id="kpiAng2027" class="text-xl font-bold font-mono text-[#1E6FBF] mt-1">Rp 0</div>
+          <div class="text-[10px] text-[#6B8A7A] font-mono mt-1">Estimasi Kebutuhan Biaya</div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Kenaikan / Growth</span>
-          <div id="kpiAngGrowth" class="text-xl font-bold font-mono text-purple-400 mt-1">+0.0%</div>
-          <div id="kpiAngDiff" class="text-[10px] text-slate-500 font-mono mt-1">Selisih: +Rp 0</div>
+        <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl p-4">
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Kenaikan / Growth</span>
+          <div id="kpiAngGrowth" class="text-xl font-bold font-mono text-[#7B3FC4] mt-1">+0.0%</div>
+          <div id="kpiAngDiff" class="text-[10px] text-[#6B8A7A] font-mono mt-1">Selisih: +Rp 0</div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Total Item Anggaran</span>
-          <div id="kpiAngTotalItems" class="text-xl font-bold font-mono text-white mt-1">0 Item</div>
-          <div class="text-[10px] text-slate-500 font-mono mt-1">Pekerjaan / Brand IT</div>
+        <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl p-4">
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Total Item Anggaran</span>
+          <div id="kpiAngTotalItems" class="text-xl font-bold font-mono text-[#12392A] mt-1">0 Item</div>
+          <div class="text-[10px] text-[#6B8A7A] font-mono mt-1">Pekerjaan / Brand IT</div>
         </div>
       </div>
 
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-3 flex flex-col md:flex-row items-center justify-between gap-3">
         <div class="relative flex-1 w-full">
-          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-slate-400"></i>
-          <input type="text" id="anggaranSearchInput" oninput="renderAnggaranTable()" placeholder="Cari produk, brand, mata anggaran..." class="w-full pl-9 pr-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500">
+          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-[#4B6B5B]"></i>
+          <input type="text" id="anggaranSearchInput" oninput="renderAnggaranTable()" placeholder="Cari produk, brand, mata anggaran..." class="w-full pl-9 pr-3 py-2 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl text-xs text-[#12392A] placeholder-[#7C9A8A] focus:outline-hidden focus:border-[#22A861]">
         </div>
-        <div class="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 text-[11px] font-mono font-bold">
-          <button onclick="setAnggaranFilter('ALL')" id="af-all" class="px-3 py-1 rounded-lg bg-emerald-600 text-white shadow-2xs">SEMUA</button>
-          <button onclick="setAnggaranFilter('OPEX')" id="af-opex" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white">OPEX</button>
-          <button onclick="setAnggaranFilter('CAPEX')" id="af-capex" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white">CAPEX</button>
+        <div class="flex items-center bg-[#F2F9F4] p-1 rounded-xl border border-[#CFE5D6] text-[11px] font-mono font-bold">
+          <button onclick="setAnggaranFilter('ALL')" id="af-all" class="px-3 py-1 rounded-lg bg-[#00793F] text-white shadow-2xs">SEMUA</button>
+          <button onclick="setAnggaranFilter('OPEX')" id="af-opex" class="px-3 py-1 rounded-lg text-[#4B6B5B] hover:text-[#12392A]">OPEX</button>
+          <button onclick="setAnggaranFilter('CAPEX')" id="af-capex" class="px-3 py-1 rounded-lg text-[#4B6B5B] hover:text-[#12392A]">CAPEX</button>
         </div>
       </div>
 
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl overflow-hidden shadow-xl">
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-950/80 border-b border-slate-800 text-slate-400 uppercase text-[10px] font-bold">
+          <table class="w-full text-left text-xs text-[#2F5545]">
+            <thead class="bg-[#F2F9F4]/80 border-b border-[#CFE5D6] text-[#4B6B5B] uppercase text-[10px] font-bold">
               <tr>
                 <th class="p-3 w-12 text-center">No</th>
                 <th class="p-3">Produk / Brand / Pekerjaan</th>
@@ -424,7 +424,7 @@
                 <th class="p-3 text-center">Estimasi Pertumbuhan</th>
               </tr>
             </thead>
-            <tbody id="anggaranTableBody" class="divide-y divide-slate-800/60 font-sans"></tbody>
+            <tbody id="anggaranTableBody" class="divide-y divide-[#CFE5D6]/60 font-sans"></tbody>
           </table>
         </div>
       </div>
@@ -433,41 +433,41 @@
     <!-- TAB 6: REQUEST DATAMART -->
     <div id="view-datamart" class="hidden space-y-4">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="text-[11px] font-bold text-slate-400 uppercase">Total Request Datamart</span>
-          <div id="kpiDmTotal" class="text-xl font-bold font-mono text-white mt-1">0 Tiket</div>
+        <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl p-4">
+          <span class="text-[11px] font-bold text-[#4B6B5B] uppercase">Total Request Datamart</span>
+          <div id="kpiDmTotal" class="text-xl font-bold font-mono text-[#12392A] mt-1">0 Tiket</div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="text-[11px] font-bold text-emerald-400 uppercase">Done & Table Ready</span>
-          <div id="kpiDmDone" class="text-xl font-bold font-mono text-emerald-400 mt-1">0 Table</div>
+        <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl p-4">
+          <span class="text-[11px] font-bold text-[#00793F] uppercase">Done & Table Ready</span>
+          <div id="kpiDmDone" class="text-xl font-bold font-mono text-[#00793F] mt-1">0 Table</div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="text-[11px] font-bold text-amber-400 uppercase">On going / Review</span>
-          <div id="kpiDmProgress" class="text-xl font-bold font-mono text-amber-400 mt-1">0 Tiket</div>
+        <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl p-4">
+          <span class="text-[11px] font-bold text-[#A87300] uppercase">On going / Review</span>
+          <div id="kpiDmProgress" class="text-xl font-bold font-mono text-[#A87300] mt-1">0 Tiket</div>
         </div>
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4">
-          <span class="text-[11px] font-bold text-rose-400 uppercase">Rejected / Revisi</span>
-          <div id="kpiDmRejected" class="text-xl font-bold font-mono text-rose-400 mt-1">0 Tiket</div>
+        <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl p-4">
+          <span class="text-[11px] font-bold text-[#C0392B] uppercase">Rejected / Revisi</span>
+          <div id="kpiDmRejected" class="text-xl font-bold font-mono text-[#C0392B] mt-1">0 Tiket</div>
         </div>
       </div>
 
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-3 flex flex-col md:flex-row items-center justify-between gap-3">
         <div class="relative flex-1 w-full">
-          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-slate-400"></i>
-          <input type="text" id="datamartSearchInput" oninput="renderDatamartTable()" placeholder="Cari ID tiket, nama permintaan, table datamart..." class="w-full pl-9 pr-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-emerald-500">
+          <i data-lucide="search" class="w-3.5 h-3.5 absolute left-3 top-3 text-[#4B6B5B]"></i>
+          <input type="text" id="datamartSearchInput" oninput="renderDatamartTable()" placeholder="Cari ID tiket, nama permintaan, table datamart..." class="w-full pl-9 pr-3 py-2 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl text-xs text-[#12392A] placeholder-[#7C9A8A] focus:outline-hidden focus:border-[#22A861]">
         </div>
-        <div class="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800 text-[11px] font-mono font-bold">
-          <button onclick="setDatamartFilter('ALL')" id="df-all" class="px-3 py-1 rounded-lg bg-emerald-600 text-white">ALL</button>
-          <button onclick="setDatamartFilter('DONE')" id="df-done" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white">DONE</button>
-          <button onclick="setDatamartFilter('IN_PROGRESS')" id="df-prog" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white">PROGRESS</button>
-          <button onclick="setDatamartFilter('REJECTED')" id="df-rej" class="px-3 py-1 rounded-lg text-slate-400 hover:text-white">REJECTED</button>
+        <div class="flex items-center bg-[#F2F9F4] p-1 rounded-xl border border-[#CFE5D6] text-[11px] font-mono font-bold">
+          <button onclick="setDatamartFilter('ALL')" id="df-all" class="px-3 py-1 rounded-lg bg-[#00793F] text-white">ALL</button>
+          <button onclick="setDatamartFilter('DONE')" id="df-done" class="px-3 py-1 rounded-lg text-[#4B6B5B] hover:text-[#12392A]">DONE</button>
+          <button onclick="setDatamartFilter('IN_PROGRESS')" id="df-prog" class="px-3 py-1 rounded-lg text-[#4B6B5B] hover:text-[#12392A]">PROGRESS</button>
+          <button onclick="setDatamartFilter('REJECTED')" id="df-rej" class="px-3 py-1 rounded-lg text-[#4B6B5B] hover:text-[#12392A]">REJECTED</button>
         </div>
       </div>
 
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl overflow-hidden shadow-xl">
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-950/80 border-b border-slate-800 text-slate-400 uppercase text-[10px] font-bold">
+          <table class="w-full text-left text-xs text-[#2F5545]">
+            <thead class="bg-[#F2F9F4]/80 border-b border-[#CFE5D6] text-[#4B6B5B] uppercase text-[10px] font-bold">
               <tr>
                 <th class="p-3 w-10 text-center">No</th>
                 <th class="p-3 text-center w-28">ID Tiket</th>
@@ -477,7 +477,7 @@
                 <th class="p-3">Keterangan Status</th>
               </tr>
             </thead>
-            <tbody id="datamartTableBody" class="divide-y divide-slate-800/60 font-sans"></tbody>
+            <tbody id="datamartTableBody" class="divide-y divide-[#CFE5D6]/60 font-sans"></tbody>
           </table>
         </div>
       </div>
@@ -485,34 +485,34 @@
 
     <!-- TAB 7: DATA AUDIT PROMO -->
     <div id="view-audit" class="hidden space-y-4">
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xl">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl p-3 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xl">
         <div class="relative flex-1 w-full">
-          <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3 text-slate-400"></i>
+          <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3 text-[#4B6B5B]"></i>
           <input 
             type="text" 
             id="auditSearchInput" 
             oninput="renderAuditTable()" 
             placeholder="Cari promo berdasarkan No, Nama Promo, Deskripsi, atau Kode Promo..." 
-            class="w-full pl-10 pr-4 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-hidden focus:border-purple-500 transition shadow-inner"
+            class="w-full pl-10 pr-4 py-2 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl text-xs text-[#12392A] placeholder-[#7C9A8A] focus:outline-hidden focus:border-[#7B3FC4] transition shadow-inner"
           >
         </div>
 
         <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
           <button 
             onclick="exportAuditPromoCSV()" 
-            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition border border-slate-700 shadow-xs cursor-pointer shrink-0" 
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#1D4636] text-xs font-bold transition border border-[#B9D8C4] shadow-xs cursor-pointer shrink-0" 
             title="Download CSV Sesuai Kolom Sheet"
           >
-            <i data-lucide="download" class="w-3.5 h-3.5 text-purple-400"></i>
+            <i data-lucide="download" class="w-3.5 h-3.5 text-[#7B3FC4]"></i>
             <span>Export CSV</span>
           </button>
         </div>
       </div>
 
-      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
+      <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] rounded-2xl overflow-hidden shadow-xl">
         <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-950/90 border-b border-slate-800 text-slate-400 uppercase text-[10px] font-bold sticky top-0 tracking-wider">
+          <table class="w-full text-left text-xs text-[#2F5545]">
+            <thead class="bg-[#F2F9F4]/90 border-b border-[#CFE5D6] text-[#4B6B5B] uppercase text-[10px] font-bold sticky top-0 tracking-wider">
               <tr>
                 <th class="p-3.5 w-12 text-center">No</th>
                 <th class="p-3.5 min-w-[200px]">Nama Promo</th>
@@ -524,13 +524,13 @@
                 <th class="p-3.5 text-center w-14">Aksi</th>
               </tr>
             </thead>
-            <tbody id="auditTableBody" class="divide-y divide-slate-800/60 font-sans"></tbody>
+            <tbody id="auditTableBody" class="divide-y divide-[#CFE5D6]/60 font-sans"></tbody>
           </table>
         </div>
 
-        <div class="p-3.5 bg-slate-950/80 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+        <div class="p-3.5 bg-[#F2F9F4]/80 border-t border-[#CFE5D6] flex items-center justify-between text-[11px] font-mono text-[#4B6B5B]">
           <span id="auditTableCountInfo">Menampilkan 0 item</span>
-          <span class="text-purple-400 font-bold tracking-wider">DATA AUDIT PROMO</span>
+          <span class="text-[#7B3FC4] font-bold tracking-wider">DATA AUDIT PROMO</span>
         </div>
       </div>
     </div>
@@ -538,185 +538,185 @@
   </main>
 
   <!-- MODAL: PROJECT DETAIL -->
-  <div id="projectDetailModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-3 hidden">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
-      <div class="flex items-start justify-between p-4 border-b border-slate-800 bg-slate-950/60">
+  <div id="projectDetailModal" class="fixed inset-0 z-50 bg-[#0B2E1F]/60 backdrop-blur-xs flex items-center justify-center p-3 hidden">
+    <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl max-w-xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="flex items-start justify-between p-4 border-b border-[#CFE5D6] bg-[#F2F9F4]/60">
         <div>
           <div class="flex items-center gap-2 flex-wrap">
-            <span id="modalRkfPill" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border bg-emerald-950 text-emerald-300 border-emerald-800">RKF</span>
-            <span id="modalTipePill" class="text-[10px] font-mono font-bold text-slate-400 uppercase">Eksternal • Vendor</span>
-            <span id="modalStatusBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border bg-blue-950 text-blue-300 border-blue-800">On going</span>
-            <span id="modalTahunBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border bg-amber-950 text-amber-300 border-amber-800">2026</span>
-            <span id="modalQuartalBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border bg-purple-950 text-purple-300 border-purple-800">Q1</span>
+            <span id="modalRkfPill" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border bg-[#DDF1E4] text-[#00693A] border-[#A8D8BC]">RKF</span>
+            <span id="modalTipePill" class="text-[10px] font-mono font-bold text-[#4B6B5B] uppercase">Eksternal • Vendor</span>
+            <span id="modalStatusBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border bg-[#E3F0FB] text-[#1B5E9E] border-[#B5D4F0]">On going</span>
+            <span id="modalTahunBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border bg-[#FFF1C2] text-[#7A5600] border-[#F0D47A]">2026</span>
+            <span id="modalQuartalBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border bg-[#F1E8FB] text-[#6B33B0] border-[#D4BDF0]">Q1</span>
           </div>
-          <h3 id="modalTaskName" class="text-base font-bold text-white mt-1.5">Nama Proyek</h3>
-          <p id="modalProkerName" class="text-xs text-slate-400">Proker: -</p>
+          <h3 id="modalTaskName" class="text-base font-bold text-[#12392A] mt-1.5">Nama Proyek</h3>
+          <p id="modalProkerName" class="text-xs text-[#4B6B5B]">Proker: -</p>
         </div>
-        <button onclick="closeDetailModal()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
+        <button onclick="closeDetailModal()" class="p-1.5 rounded-lg bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#4B6B5B] hover:text-[#12392A] cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
       </div>
       
       <div class="p-4 overflow-y-auto space-y-3 custom-scrollbar text-xs">
         
         <!-- Baris 4 Kotak Info: Output, Tahun, Quartal, Expected Adm -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-          <div class="p-2.5 bg-purple-950/30 border border-purple-800/50 rounded-xl">
-            <span class="text-[9px] text-purple-400 font-bold uppercase tracking-wider">Quartal Expected (Kolom U)</span>
-            <div id="modalQuartal" class="font-bold text-purple-200 mt-0.5 text-sm">-</div>
+          <div class="p-2.5 bg-[#F1E8FB]/30 border border-[#D4BDF0]/50 rounded-xl">
+            <span class="text-[9px] text-[#7B3FC4] font-bold uppercase tracking-wider">Quartal Expected (Kolom U)</span>
+            <div id="modalQuartal" class="font-bold text-[#5A2A96] mt-0.5 text-sm">-</div>
           </div>
-          <div class="p-2.5 bg-teal-950/30 border border-teal-800/50 rounded-xl">
-            <span class="text-[9px] text-teal-400 font-bold uppercase tracking-wider">Expected Adm (Kolom V)</span>
-            <div id="modalExpectedAdm" class="font-bold text-teal-200 mt-0.5 text-xs truncate">-</div>
+          <div class="p-2.5 bg-[#DFF4F1]/30 border border-[#A8DDD6]/50 rounded-xl">
+            <span class="text-[9px] text-[#0F8F85] font-bold uppercase tracking-wider">Expected Adm (Kolom V)</span>
+            <div id="modalExpectedAdm" class="font-bold text-[#0F5F58] mt-0.5 text-xs truncate">-</div>
           </div>
-          <div class="p-2.5 bg-amber-950/30 border border-amber-800/50 rounded-xl">
-            <span class="text-[9px] text-amber-400 font-bold uppercase tracking-wider">Tahun (Kolom D)</span>
-            <div id="modalTahun" class="font-bold text-amber-200 mt-0.5 text-sm">-</div>
+          <div class="p-2.5 bg-[#FFF1C2]/30 border border-[#F0D47A]/50 rounded-xl">
+            <span class="text-[9px] text-[#A87300] font-bold uppercase tracking-wider">Tahun (Kolom D)</span>
+            <div id="modalTahun" class="font-bold text-[#7A5600] mt-0.5 text-sm">-</div>
           </div>
-          <div class="p-2.5 bg-indigo-950/30 border border-indigo-800/50 rounded-xl">
-            <span class="text-[9px] text-indigo-400 font-bold uppercase tracking-wider">Output Project (Kolom X)</span>
-            <div id="modalOutputProject" class="font-bold text-indigo-200 mt-0.5 text-xs truncate">-</div>
+          <div class="p-2.5 bg-[#E8EAFB]/30 border border-[#C4C8F0]/50 rounded-xl">
+            <span class="text-[9px] text-[#4B52C4] font-bold uppercase tracking-wider">Output Project (Kolom X)</span>
+            <div id="modalOutputProject" class="font-bold text-[#353BA0] mt-0.5 text-xs truncate">-</div>
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-2 font-mono">
-          <div class="p-2.5 bg-slate-950/70 border border-slate-800 rounded-xl">
-            <span class="text-[10px] text-slate-500 font-bold uppercase">Vendor / Mitra</span>
-            <div id="modalVendor" class="font-bold text-slate-200 mt-0.5">-</div>
+          <div class="p-2.5 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl">
+            <span class="text-[10px] text-[#6B8A7A] font-bold uppercase">Vendor / Mitra</span>
+            <div id="modalVendor" class="font-bold text-[#1D4636] mt-0.5">-</div>
           </div>
-          <div class="p-2.5 bg-slate-950/70 border border-slate-800 rounded-xl">
-            <span class="text-[10px] text-slate-500 font-bold uppercase">PIC Unit Kerja</span>
-            <div id="modalPic" class="font-bold text-slate-200 mt-0.5">-</div>
+          <div class="p-2.5 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl">
+            <span class="text-[10px] text-[#6B8A7A] font-bold uppercase">PIC Unit Kerja</span>
+            <div id="modalPic" class="font-bold text-[#1D4636] mt-0.5">-</div>
           </div>
-          <div class="p-2.5 bg-slate-950/70 border border-slate-800 rounded-xl">
-            <span class="text-[10px] text-slate-500 font-bold uppercase">Nilai Kontrak (Cost)</span>
-            <div id="modalCost" class="font-bold text-emerald-400 mt-0.5">Rp 0</div>
+          <div class="p-2.5 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl">
+            <span class="text-[10px] text-[#6B8A7A] font-bold uppercase">Nilai Kontrak (Cost)</span>
+            <div id="modalCost" class="font-bold text-[#00793F] mt-0.5">Rp 0</div>
           </div>
-          <div class="p-2.5 bg-slate-950/70 border border-slate-800 rounded-xl">
-            <span class="text-[10px] text-slate-500 font-bold uppercase">Jatuh Tempo (End Kontrak)</span>
-            <div id="modalDueDate" class="font-bold text-rose-400 mt-0.5">-</div>
+          <div class="p-2.5 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl">
+            <span class="text-[10px] text-[#6B8A7A] font-bold uppercase">Jatuh Tempo (End Kontrak)</span>
+            <div id="modalDueDate" class="font-bold text-[#C0392B] mt-0.5">-</div>
           </div>
         </div>
 
-        <div class="p-3 bg-slate-950/80 border border-slate-800 rounded-xl space-y-2">
+        <div class="p-3 bg-[#F2F9F4]/80 border border-[#CFE5D6] rounded-xl space-y-2">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1.5 text-slate-300 font-bold"><i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i><span>Dokumen / Lampiran Proyek</span></div>
+            <div class="flex items-center gap-1.5 text-[#2F5545] font-bold"><i data-lucide="file-text" class="w-4 h-4 text-[#00793F]"></i><span>Dokumen / Lampiran Proyek</span></div>
             <div class="flex items-center gap-1.5">
-              <button id="modalCopyBtn" onclick="copyModalLink()" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-[10px] font-bold flex items-center gap-1 cursor-pointer">
+              <button id="modalCopyBtn" onclick="copyModalLink()" class="px-2 py-1 bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#2F5545] rounded-lg text-[10px] font-bold flex items-center gap-1 cursor-pointer">
                 <i data-lucide="copy" class="w-3 h-3"></i>
                 <span id="modalCopyText">Salin URL</span>
               </button>
-              <a id="modalOpenDocBtn" href="#" target="_blank" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-[10px] font-bold flex items-center gap-1 cursor-pointer">
+              <a id="modalOpenDocBtn" href="#" target="_blank" class="px-2.5 py-1 bg-[#00793F] hover:bg-[#006B38] text-white rounded-lg text-[10px] font-bold flex items-center gap-1 cursor-pointer">
                 <span>Buka Link</span><i data-lucide="external-link" class="w-3 h-3"></i>
               </a>
             </div>
           </div>
-          <div id="modalDocPreview" class="p-2 bg-slate-900 border border-slate-800 rounded-lg font-mono text-[10px] text-slate-400 break-all">-</div>
+          <div id="modalDocPreview" class="p-2 bg-[#FFFFFF] border border-[#CFE5D6] rounded-lg font-mono text-[10px] text-[#4B6B5B] break-all">-</div>
         </div>
-        <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-1">
-          <span class="text-[10px] text-slate-500 font-bold uppercase">Deskripsi / Progres</span>
-          <p id="modalDesc" class="text-slate-300">-</p>
+        <div class="p-3 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl space-y-1">
+          <span class="text-[10px] text-[#6B8A7A] font-bold uppercase">Deskripsi / Progres</span>
+          <p id="modalDesc" class="text-[#2F5545]">-</p>
         </div>
-        <div class="p-3 bg-emerald-950/20 border border-emerald-800/40 rounded-xl space-y-1">
-          <span class="text-[10px] text-emerald-400 font-bold uppercase">Tindakan Selanjutnya (Next Action)</span>
-          <p id="modalNextAction" class="font-medium text-emerald-200">-</p>
+        <div class="p-3 bg-[#DDF1E4]/20 border border-[#A8D8BC]/40 rounded-xl space-y-1">
+          <span class="text-[10px] text-[#00793F] font-bold uppercase">Tindakan Selanjutnya (Next Action)</span>
+          <p id="modalNextAction" class="font-medium text-[#00693A]">-</p>
         </div>
       </div>
-      <div class="p-3 bg-slate-950/80 border-t border-slate-800 flex justify-end">
-        <button onclick="closeDetailModal()" class="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl cursor-pointer">Tutup</button>
+      <div class="p-3 bg-[#F2F9F4]/80 border-t border-[#CFE5D6] flex justify-end">
+        <button onclick="closeDetailModal()" class="px-4 py-1.5 bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#12392A] text-xs font-bold rounded-xl cursor-pointer">Tutup</button>
       </div>
     </div>
   </div>
 
   <!-- MODAL: DATA AUDIT PROMO DETAIL -->
-  <div id="auditDetailModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-3 hidden">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
-      <div class="flex items-start justify-between p-4 border-b border-slate-800 bg-slate-950/60">
+  <div id="auditDetailModal" class="fixed inset-0 z-50 bg-[#0B2E1F]/60 backdrop-blur-xs flex items-center justify-center p-3 hidden">
+    <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl max-w-lg w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="flex items-start justify-between p-4 border-b border-[#CFE5D6] bg-[#F2F9F4]/60">
         <div>
-          <span id="auditModalNoPill" class="px-2 py-0.5 rounded bg-purple-950 text-purple-300 border border-purple-800 text-[10px] font-mono font-bold">No. 1</span>
-          <h3 id="auditModalName" class="text-base font-bold text-white mt-1.5 leading-snug">Nama Promo</h3>
+          <span id="auditModalNoPill" class="px-2 py-0.5 rounded bg-[#F1E8FB] text-[#6B33B0] border border-[#D4BDF0] text-[10px] font-mono font-bold">No. 1</span>
+          <h3 id="auditModalName" class="text-base font-bold text-[#12392A] mt-1.5 leading-snug">Nama Promo</h3>
         </div>
-        <button onclick="closeAuditModal()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
+        <button onclick="closeAuditModal()" class="p-1.5 rounded-lg bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#4B6B5B] hover:text-[#12392A] cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
       </div>
       <div class="p-4 overflow-y-auto space-y-3.5 text-xs">
-        <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-1">
-          <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Deskripsi Promo</span>
-          <p id="auditModalDesc" class="text-slate-200 leading-relaxed">-</p>
+        <div class="p-3 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl space-y-1">
+          <span class="text-[10px] text-[#6B8A7A] font-bold uppercase tracking-wider">Deskripsi Promo</span>
+          <p id="auditModalDesc" class="text-[#1D4636] leading-relaxed">-</p>
         </div>
 
-        <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-1.5">
-          <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Kode Promo</span>
+        <div class="p-3 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl space-y-1.5">
+          <span class="text-[10px] text-[#6B8A7A] font-bold uppercase tracking-wider">Kode Promo</span>
           <div id="auditModalCodes" class="flex flex-wrap gap-1.5"></div>
         </div>
 
         <div class="grid grid-cols-2 gap-2.5 font-mono">
-          <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl">
-            <span class="text-[10px] text-slate-500 font-bold uppercase">Budgeting</span>
-            <div id="auditModalBudget" class="font-bold text-white text-sm mt-0.5">Rp 0</div>
+          <div class="p-3 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl">
+            <span class="text-[10px] text-[#6B8A7A] font-bold uppercase">Budgeting</span>
+            <div id="auditModalBudget" class="font-bold text-[#12392A] text-sm mt-0.5">Rp 0</div>
           </div>
-          <div class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl">
-            <span class="text-[10px] text-slate-500 font-bold uppercase">Penyerapan Budgeting</span>
-            <div id="auditModalPenyerapan" class="font-bold text-emerald-400 text-sm mt-0.5">Rp 0</div>
+          <div class="p-3 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl">
+            <span class="text-[10px] text-[#6B8A7A] font-bold uppercase">Penyerapan Budgeting</span>
+            <div id="auditModalPenyerapan" class="font-bold text-[#00793F] text-sm mt-0.5">Rp 0</div>
           </div>
         </div>
 
-        <div id="auditModalProgressWrapper" class="p-3 bg-slate-950/70 border border-slate-800 rounded-xl space-y-2 font-mono">
+        <div id="auditModalProgressWrapper" class="p-3 bg-[#F2F9F4]/70 border border-[#CFE5D6] rounded-xl space-y-2 font-mono">
           <div class="flex justify-between items-center text-[11px]">
-            <span class="text-slate-400 font-bold">Tingkat Penyerapan Budgeting</span>
-            <span id="auditModalPercent" class="text-emerald-400 font-bold">0%</span>
+            <span class="text-[#4B6B5B] font-bold">Tingkat Penyerapan Budgeting</span>
+            <span id="auditModalPercent" class="text-[#00793F] font-bold">0%</span>
           </div>
-          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div id="auditModalProgressBar" class="h-full bg-emerald-400 rounded-full" style="width: 0%"></div>
+          <div class="w-full bg-[#E4F1E8] h-2 rounded-full overflow-hidden">
+            <div id="auditModalProgressBar" class="h-full bg-[#22A861] rounded-full" style="width: 0%"></div>
           </div>
-          <div class="flex justify-between text-[10px] text-slate-400">
+          <div class="flex justify-between text-[10px] text-[#4B6B5B]">
             <span id="auditModalTerpakaiLabel">Terpakai: Rp 0</span>
             <span id="auditModalSisaLabel">Sisa: Rp 0</span>
           </div>
         </div>
 
-        <div class="p-3 bg-slate-950/80 border border-slate-800 rounded-xl space-y-2">
+        <div class="p-3 bg-[#F2F9F4]/80 border border-[#CFE5D6] rounded-xl space-y-2">
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1.5 text-slate-300 font-bold">
-              <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
+            <div class="flex items-center gap-1.5 text-[#2F5545] font-bold">
+              <i data-lucide="file-text" class="w-4 h-4 text-[#7B3FC4]"></i>
               <span>Link Dokumen</span>
             </div>
             <div id="auditModalDocActionGroup" class="flex items-center gap-1.5">
-              <button onclick="copyAuditModalLink()" class="px-2 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-[10px] font-bold flex items-center gap-1 cursor-pointer">
+              <button onclick="copyAuditModalLink()" class="px-2 py-1 bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#2F5545] rounded-lg text-[10px] font-bold flex items-center gap-1 cursor-pointer">
                 <i data-lucide="copy" class="w-3 h-3"></i>
                 <span id="auditModalCopyText">Salin URL</span>
               </button>
-              <a id="auditModalOpenDocBtn" href="#" target="_blank" class="px-2.5 py-1 bg-purple-600 hover:bg-purple-500 text-white rounded-lg text-[10px] font-bold flex items-center gap-1">
+              <a id="auditModalOpenDocBtn" href="#" target="_blank" class="px-2.5 py-1 bg-[#7B3FC4] hover:bg-[#6A2FB0] text-white rounded-lg text-[10px] font-bold flex items-center gap-1">
                 <span>Buka Drive</span>
                 <i data-lucide="external-link" class="w-3 h-3"></i>
               </a>
             </div>
           </div>
-          <div id="auditModalDocPreview" class="p-2 bg-slate-900 border border-slate-800 rounded-lg font-mono text-[10px] text-slate-400 break-all">-</div>
+          <div id="auditModalDocPreview" class="p-2 bg-[#FFFFFF] border border-[#CFE5D6] rounded-lg font-mono text-[10px] text-[#4B6B5B] break-all">-</div>
         </div>
       </div>
-      <div class="p-3 bg-slate-950/80 border-t border-slate-800 flex justify-end">
-        <button onclick="closeAuditModal()" class="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl cursor-pointer">Tutup</button>
+      <div class="p-3 bg-[#F2F9F4]/80 border-t border-[#CFE5D6] flex justify-end">
+        <button onclick="closeAuditModal()" class="px-4 py-1.5 bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#12392A] text-xs font-bold rounded-xl cursor-pointer">Tutup</button>
       </div>
     </div>
   </div>
 
   <!-- MODAL: AI ASSISTANT -->
-  <div id="aiAssistantModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-3 hidden">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
-      <div class="flex items-center justify-between p-4 border-b border-slate-800 bg-slate-950/60">
-        <div class="flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5 text-emerald-400"></i><h3 class="text-sm font-bold text-white">AI Executive Assistant</h3></div>
-        <button onclick="closeAIModal()" class="p-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
+  <div id="aiAssistantModal" class="fixed inset-0 z-50 bg-[#0B2E1F]/60 backdrop-blur-xs flex items-center justify-center p-3 hidden">
+    <div class="bg-[#FFFFFF] border border-[#CFE5D6] rounded-2xl max-w-xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+      <div class="flex items-center justify-between p-4 border-b border-[#CFE5D6] bg-[#F2F9F4]/60">
+        <div class="flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5 text-[#00793F]"></i><h3 class="text-sm font-bold text-[#12392A]">AI Executive Assistant</h3></div>
+        <button onclick="closeAIModal()" class="p-1 rounded-lg bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#4B6B5B] hover:text-[#12392A] cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
       </div>
       <div class="p-4 overflow-y-auto space-y-3 custom-scrollbar text-xs">
-        <div class="p-3 bg-emerald-950/30 border border-emerald-800/40 rounded-xl space-y-1">
-          <span class="text-[10px] font-bold text-emerald-400 uppercase">Ringkasan Eksekutif Portfolio</span>
-          <p id="aiSummaryText" class="text-slate-200">Menganalisis pengadaan dan anggaran...</p>
+        <div class="p-3 bg-[#DDF1E4]/30 border border-[#A8D8BC]/40 rounded-xl space-y-1">
+          <span class="text-[10px] font-bold text-[#00793F] uppercase">Ringkasan Eksekutif Portfolio</span>
+          <p id="aiSummaryText" class="text-[#1D4636]">Menganalisis pengadaan dan anggaran...</p>
         </div>
-        <div class="p-3 bg-slate-950 border border-slate-800 rounded-xl space-y-1.5">
-          <span class="text-[10px] font-bold text-rose-400 uppercase">Peringatan Jatuh Tempo & Risiko</span>
-          <ul id="aiRisksList" class="space-y-1 text-slate-300 list-disc list-inside"></ul>
+        <div class="p-3 bg-[#F2F9F4] border border-[#CFE5D6] rounded-xl space-y-1.5">
+          <span class="text-[10px] font-bold text-[#C0392B] uppercase">Peringatan Jatuh Tempo & Risiko</span>
+          <ul id="aiRisksList" class="space-y-1 text-[#2F5545] list-disc list-inside"></ul>
         </div>
       </div>
-      <div class="p-3 bg-slate-950/80 border-t border-slate-800 flex justify-end">
-        <button onclick="closeAIModal()" class="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold rounded-xl cursor-pointer">Tutup</button>
+      <div class="p-3 bg-[#F2F9F4]/80 border-t border-[#CFE5D6] flex justify-end">
+        <button onclick="closeAIModal()" class="px-4 py-1.5 bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#12392A] text-xs font-bold rounded-xl cursor-pointer">Tutup</button>
       </div>
     </div>
   </div>
@@ -741,7 +741,7 @@
       if (!box) return;
       const years = Array.from(new Set(appData.procurement.map(i => String(i.tahun || '').trim()).filter(Boolean))).sort();
       if (overviewYear !== 'ALL' && !years.includes(overviewYear)) overviewYear = 'ALL';
-      const mk = (val, label) => `<button onclick="setOverviewYear('${val}')" class="px-3 py-1 rounded-lg text-[11px] font-mono font-bold transition cursor-pointer ${overviewYear === val ? 'bg-amber-500 text-slate-950 shadow-xs' : 'text-slate-400 hover:text-white'}">${label}</button>`;
+      const mk = (val, label) => `<button onclick="setOverviewYear('${val}')" class="px-3 py-1 rounded-lg text-[11px] font-mono font-bold transition cursor-pointer ${overviewYear === val ? 'bg-[#F5B800] text-[#12392A] shadow-xs' : 'text-[#4B6B5B] hover:text-[#12392A]'}">${label}</button>`;
       box.innerHTML = mk('ALL', 'Semua Tahun') + years.map(y => mk(y, y)).join('');
       const info = document.getElementById('overviewYearInfo');
       if (info) {
@@ -804,13 +804,13 @@
     function getStatusBadgeHtml(status) {
       const s = (status || '').toLowerCase();
       if (s.includes('done') || s.includes('selesai')) {
-        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-emerald-950 text-emerald-300 border border-emerald-800">${status || 'Done'}</span>`;
+        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-[#DDF1E4] text-[#00693A] border border-[#A8D8BC]">${status || 'Done'}</span>`;
       } else if (s.includes('hold') || s.includes('not started') || s.includes('belum')) {
-        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-amber-950 text-amber-300 border border-amber-800">${status || 'Hold'}</span>`;
+        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-[#FFF1C2] text-[#7A5600] border border-[#F0D47A]">${status || 'Hold'}</span>`;
       } else if (s.includes('adendum') || s.includes('tender')) {
-        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-purple-950 text-purple-300 border border-purple-800">${status}</span>`;
+        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-[#F1E8FB] text-[#6B33B0] border border-[#D4BDF0]">${status}</span>`;
       } else {
-        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-blue-950 text-blue-300 border border-blue-800">${status || 'On going'}</span>`;
+        return `<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-[#E3F0FB] text-[#1B5E9E] border border-[#B5D4F0]">${status || 'On going'}</span>`;
       }
     }
 
@@ -1100,10 +1100,10 @@
       const paymentDropdown = document.getElementById('paymentStatusDropdown');
       if (paymentDropdown) {
         const curVal = paymentDropdown.value;
-        paymentDropdown.innerHTML = `<option value="ALL" class="bg-slate-900 text-white">Semua Status (${appData.procurement.length})</option>` +
+        paymentDropdown.innerHTML = `<option value="ALL" class="bg-[#FFFFFF] text-[#12392A]">Semua Status (${appData.procurement.length})</option>` +
           statuses.map(st => {
             const count = appData.procurement.filter(i => (i.status || '').toLowerCase() === st.toLowerCase()).length;
-            return `<option value="${st}" class="bg-slate-900 text-slate-200">${st} (${count})</option>`;
+            return `<option value="${st}" class="bg-[#FFFFFF] text-[#1D4636]">${st} (${count})</option>`;
           }).join('');
         paymentDropdown.value = curVal || 'ALL';
       }
@@ -1140,8 +1140,8 @@
       const paymentQuartalSelect = document.getElementById('paymentQuartalDropdown');
       if (paymentQuartalSelect) {
         const curQ = paymentQuartalSelect.value;
-        paymentQuartalSelect.innerHTML = `<option value="ALL" class="bg-slate-900 text-white">Semua Quartal</option>` +
-          quartals.map(q => `<option value="${q}" class="bg-slate-900 text-purple-300 font-bold">${q}</option>`).join('');
+        paymentQuartalSelect.innerHTML = `<option value="ALL" class="bg-[#FFFFFF] text-[#12392A]">Semua Quartal</option>` +
+          quartals.map(q => `<option value="${q}" class="bg-[#FFFFFF] text-[#6B33B0] font-bold">${q}</option>`).join('');
         paymentQuartalSelect.value = curQ || 'ALL';
       }
     }
@@ -1169,7 +1169,7 @@
         const viewEl = document.getElementById(`view-${t}`);
         if (viewEl) viewEl.classList.add('hidden');
         const btn = document.getElementById(`tab-${t}`);
-        if (btn) btn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-slate-400 hover:text-white';
+        if (btn) btn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition text-[#4B6B5B] hover:text-[#12392A]';
       });
 
       const activeView = document.getElementById(`view-${tabId}`);
@@ -1178,9 +1178,9 @@
       const activeBtn = document.getElementById(`tab-${tabId}`);
       if (activeBtn) {
         if (tabId === 'audit') {
-          activeBtn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition bg-purple-600 text-white shadow-xs';
+          activeBtn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition bg-[#7B3FC4] text-white shadow-xs';
         } else {
-          activeBtn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow-xs';
+          activeBtn.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition bg-[#00793F] text-white shadow-xs';
         }
       }
 
@@ -1236,53 +1236,53 @@
       const isUrgent = item.paymentPriority === 'Urgent';
       const isUpcoming = item.paymentPriority === 'Upcoming';
       const isRkf = item.rkf === 'RKF';
-      const borderClass = isUrgent ? 'border-l-4 border-l-rose-500 bg-rose-950/10' : (isUpcoming ? 'border-l-4 border-l-amber-500 bg-amber-950/10' : 'border-l-4 border-l-emerald-500');
+      const borderClass = isUrgent ? 'border-l-4 border-l-[#D9463A] bg-[#FDE8E4]/10' : (isUpcoming ? 'border-l-4 border-l-[#F5B800] bg-[#FFF1C2]/10' : 'border-l-4 border-l-[#22A861]');
 
       return `
-        <div class="bg-slate-900/90 border border-slate-800 ${borderClass} rounded-xl p-3.5 flex flex-col justify-between hover:border-slate-700 transition">
+        <div class="bg-[#FFFFFF]/90 border border-[#CFE5D6] ${borderClass} rounded-xl p-3.5 flex flex-col justify-between hover:border-[#B9D8C4] transition">
           <div>
             <div class="flex items-center justify-between gap-1 mb-1.5">
-              <span class="text-xs font-bold text-white truncate">${item.vendor || 'In-House'}</span>
+              <span class="text-xs font-bold text-[#12392A] truncate">${item.vendor || 'In-House'}</span>
               <div class="flex items-center gap-1">
                 ${item.quartalExpected && item.quartalExpected !== '-' ? `
-                  <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold uppercase bg-purple-950 text-purple-300 border border-purple-800">${item.quartalExpected}</span>
+                  <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold uppercase bg-[#F1E8FB] text-[#6B33B0] border border-[#D4BDF0]">${item.quartalExpected}</span>
                 ` : ''}
-                <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold uppercase ${isRkf ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-slate-800 text-slate-400 border border-slate-700'}">${item.rkf || 'Non-RKF'}</span>
+                <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold uppercase ${isRkf ? 'bg-[#DDF1E4] text-[#00693A] border border-[#A8D8BC]' : 'bg-[#E4F1E8] text-[#4B6B5B] border border-[#B9D8C4]'}">${item.rkf || 'Non-RKF'}</span>
                 ${getStatusBadgeHtml(item.status)}
               </div>
             </div>
-            <h4 class="text-xs font-bold text-slate-200 line-clamp-1">${item.namaTask}</h4>
-            <p class="text-[10px] text-slate-400 line-clamp-1 mb-1">${item.namaProker}</p>
+            <h4 class="text-xs font-bold text-[#1D4636] line-clamp-1">${item.namaTask}</h4>
+            <p class="text-[10px] text-[#4B6B5B] line-clamp-1 mb-1">${item.namaProker}</p>
             
-            <div class="grid grid-cols-2 gap-1 my-1.5 text-[10px] font-mono bg-slate-950/60 p-1.5 rounded-lg border border-slate-800/80">
-              <div class="text-purple-300 flex items-center gap-1 truncate">
-                <i data-lucide="target" class="w-3 h-3 text-purple-400 shrink-0"></i>
+            <div class="grid grid-cols-2 gap-1 my-1.5 text-[10px] font-mono bg-[#F2F9F4]/60 p-1.5 rounded-lg border border-[#CFE5D6]/80">
+              <div class="text-[#6B33B0] flex items-center gap-1 truncate">
+                <i data-lucide="target" class="w-3 h-3 text-[#7B3FC4] shrink-0"></i>
                 <span class="truncate">Q: <b>${item.quartalExpected || '-'}</b></span>
               </div>
-              <div class="text-teal-300 flex items-center gap-1 truncate">
-                <i data-lucide="calendar-clock" class="w-3 h-3 text-teal-400 shrink-0"></i>
+              <div class="text-[#0F766E] flex items-center gap-1 truncate">
+                <i data-lucide="calendar-clock" class="w-3 h-3 text-[#0F8F85] shrink-0"></i>
                 <span class="truncate">Adm: <b>${item.expectedAdm || '-'}</b></span>
               </div>
             </div>
 
-            <div class="text-[10px] text-indigo-300 font-medium mb-2 flex items-center gap-1">
-              <i data-lucide="layers" class="w-3 h-3 text-indigo-400 shrink-0"></i>
+            <div class="text-[10px] text-[#4047B0] font-medium mb-2 flex items-center gap-1">
+              <i data-lucide="layers" class="w-3 h-3 text-[#4B52C4] shrink-0"></i>
               <span class="truncate">Output: ${item.outputProject || '-'}</span>
             </div>
             
-            <div class="space-y-1 py-2 border-y border-slate-800 font-mono text-[11px]">
-              <div class="flex justify-between"><span class="text-slate-500">Tahun / Nilai:</span><span class="font-bold text-emerald-400">${item.tahun ? `[${item.tahun}] ` : ''}${formatRupiah(item.cost)}</span></div>
-              <div class="flex justify-between"><span class="text-slate-500">Start:</span><span class="text-slate-300">${item.startKontrak || '-'}</span></div>
-              <div class="flex justify-between"><span class="text-rose-400 font-bold">Due Date:</span><span class="font-bold text-rose-400">${item.endKontrak || '-'}</span></div>
+            <div class="space-y-1 py-2 border-y border-[#CFE5D6] font-mono text-[11px]">
+              <div class="flex justify-between"><span class="text-[#6B8A7A]">Tahun / Nilai:</span><span class="font-bold text-[#00793F]">${item.tahun ? `[${item.tahun}] ` : ''}${formatRupiah(item.cost)}</span></div>
+              <div class="flex justify-between"><span class="text-[#6B8A7A]">Start:</span><span class="text-[#2F5545]">${item.startKontrak || '-'}</span></div>
+              <div class="flex justify-between"><span class="text-[#C0392B] font-bold">Due Date:</span><span class="font-bold text-[#C0392B]">${item.endKontrak || '-'}</span></div>
             </div>
           </div>
           <div class="mt-2.5 pt-1 flex items-center justify-between gap-1">
-            <div class="truncate flex-1 text-[10px] text-slate-400"><span class="font-bold uppercase text-slate-500">Next:</span> ${item.nextAction || '-'}</div>
+            <div class="truncate flex-1 text-[10px] text-[#4B6B5B]"><span class="font-bold uppercase text-[#6B8A7A]">Next:</span> ${item.nextAction || '-'}</div>
             <div class="flex items-center gap-1 shrink-0">
               ${item.detailUrl && item.detailUrl !== '#' ? `
-                <a href="${item.detailUrl}" target="_blank" class="p-1 rounded bg-slate-800 hover:bg-slate-700 text-blue-400" title="Buka Dokumen"><i data-lucide="file-text" class="w-3.5 h-3.5"></i></a>
+                <a href="${item.detailUrl}" target="_blank" class="p-1 rounded bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#1E6FBF]" title="Buka Dokumen"><i data-lucide="file-text" class="w-3.5 h-3.5"></i></a>
               ` : ''}
-              <button onclick="openDetailModal('${item.id}')" class="px-2 py-1 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 rounded text-[10px] font-bold flex items-center gap-0.5 cursor-pointer">
+              <button onclick="openDetailModal('${item.id}')" class="px-2 py-1 bg-[#00793F]/20 hover:bg-[#00793F]/30 text-[#00793F] rounded text-[10px] font-bold flex items-center gap-0.5 cursor-pointer">
                 <span>Detail</span><i data-lucide="chevron-right" class="w-3 h-3"></i>
               </button>
             </div>
@@ -1310,7 +1310,7 @@
       if (!container) return;
 
       if (!filtered.length) {
-        container.innerHTML = `<div class="col-span-full py-8 text-center text-xs text-slate-500">Tidak ada jadwal kontrak yang cocok.</div>`;
+        container.innerHTML = `<div class="col-span-full py-8 text-center text-xs text-[#6B8A7A]">Tidak ada jadwal kontrak yang cocok.</div>`;
         return;
       }
 
@@ -1350,7 +1350,7 @@
       if (!container) return;
 
       if (!filtered.length) {
-        container.innerHTML = `<div class="col-span-full py-8 text-center text-xs text-slate-500">Tidak ada jadwal yang cocok dengan kriteria filter.</div>`;
+        container.innerHTML = `<div class="col-span-full py-8 text-center text-xs text-[#6B8A7A]">Tidak ada jadwal yang cocok dengan kriteria filter.</div>`;
         return;
       }
 
@@ -1362,23 +1362,23 @@
       const container = document.getElementById('quotaCardsGrid');
       const quotaItems = appData.procurement.filter(i => i.kuota !== null && i.kuota > 0);
       if (!quotaItems.length) {
-        container.innerHTML = `<div class="col-span-full py-8 text-center text-xs text-slate-500">Belum ada item kuota API.</div>`;
+        container.innerHTML = `<div class="col-span-full py-8 text-center text-xs text-[#6B8A7A]">Belum ada item kuota API.</div>`;
         return;
       }
       container.innerHTML = quotaItems.map(item => {
         const usage = item.utilisasi || 0;
         const isOver = usage >= 100;
         return `
-          <div class="bg-slate-900 border ${isOver ? 'border-rose-800/80 bg-rose-950/10' : 'border-slate-800'} rounded-2xl p-4 space-y-2">
+          <div class="bg-[#FFFFFF] border ${isOver ? 'border-[#E49B8F]/80 bg-[#FDE8E4]/10' : 'border-[#CFE5D6]'} rounded-2xl p-4 space-y-2">
             <div class="flex items-center justify-between">
-              <h4 class="text-xs font-bold text-white line-clamp-1">${item.namaTask}</h4>
-              <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded ${isOver ? 'bg-rose-900 text-rose-200' : 'bg-emerald-950 text-emerald-300'}">${usage}%</span>
+              <h4 class="text-xs font-bold text-[#12392A] line-clamp-1">${item.namaTask}</h4>
+              <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded ${isOver ? 'bg-[#FADBD5] text-[#A32D22]' : 'bg-[#DDF1E4] text-[#00693A]'}">${usage}%</span>
             </div>
-            <div class="text-[10px] text-slate-400 font-mono">Vendor: ${item.vendor}</div>
-            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-              <div class="h-full rounded-full ${isOver ? 'bg-rose-500' : 'bg-emerald-500'}" style="width: ${Math.min(usage, 100)}%"></div>
+            <div class="text-[10px] text-[#4B6B5B] font-mono">Vendor: ${item.vendor}</div>
+            <div class="w-full bg-[#E4F1E8] h-2 rounded-full overflow-hidden">
+              <div class="h-full rounded-full ${isOver ? 'bg-[#D9463A]' : 'bg-[#22A861]'}" style="width: ${Math.min(usage, 100)}%"></div>
             </div>
-            <div class="flex justify-between text-[10px] font-mono text-slate-400 pt-1">
+            <div class="flex justify-between text-[10px] font-mono text-[#4B6B5B] pt-1">
               <span>Kuota: ${Number(item.kuota).toLocaleString('id-ID')}</span>
               <span>Pakai: ${Number(item.totalPemakaian || 0).toLocaleString('id-ID')}</span>
             </div>
@@ -1415,7 +1415,7 @@
       if (!tbody) return;
 
       if (!filtered.length) {
-        tbody.innerHTML = `<tr><td colspan="13" class="p-8 text-center text-xs text-slate-500">Tidak ada data yang cocok dengan kriteria filter.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="13" class="p-8 text-center text-xs text-[#6B8A7A]">Tidak ada data yang cocok dengan kriteria filter.</td></tr>`;
         document.getElementById('tableCountInfo').innerText = `Menampilkan 0 dari ${appData.procurement.length} item`;
         return;
       }
@@ -1426,46 +1426,46 @@
         const isRkf = item.rkf === 'RKF';
 
         return `
-          <tr onclick="openDetailModal('${item.id}')" class="hover:bg-slate-800/60 transition cursor-pointer group">
-            <td class="p-3 text-center font-mono font-bold text-slate-500 group-hover:text-slate-300">${item.id}</td>
-            <td class="p-3 text-center font-mono font-bold text-amber-400">${item.tahun || '-'}</td>
+          <tr onclick="openDetailModal('${item.id}')" class="hover:bg-[#E4F1E8]/60 transition cursor-pointer group">
+            <td class="p-3 text-center font-mono font-bold text-[#6B8A7A] group-hover:text-[#2F5545]">${item.id}</td>
+            <td class="p-3 text-center font-mono font-bold text-[#A87300]">${item.tahun || '-'}</td>
             <td class="p-3 text-center font-mono">
               ${item.quartalExpected && item.quartalExpected !== '-' ? `
-                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-950/80 text-purple-300 border border-purple-800">${item.quartalExpected}</span>
-              ` : `<span class="text-slate-600">-</span>`}
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#F1E8FB]/80 text-[#6B33B0] border border-[#D4BDF0]">${item.quartalExpected}</span>
+              ` : `<span class="text-[#8FA99B]">-</span>`}
             </td>
-            <td class="p-3 font-mono text-xs text-teal-300 font-semibold whitespace-nowrap">${item.expectedAdm || '-'}</td>
+            <td class="p-3 font-mono text-xs text-[#0F766E] font-semibold whitespace-nowrap">${item.expectedAdm || '-'}</td>
             <td class="p-3 max-w-xs">
-              <div class="font-bold text-slate-100 line-clamp-1 group-hover:text-emerald-300 transition">${item.namaTask}</div>
-              <div class="text-[10px] text-slate-400 line-clamp-1">${item.namaProker}</div>
+              <div class="font-bold text-[#12392A] line-clamp-1 group-hover:text-[#00693A] transition">${item.namaTask}</div>
+              <div class="text-[10px] text-[#4B6B5B] line-clamp-1">${item.namaProker}</div>
               <div class="flex gap-1 mt-1">
-                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded ${isRkf ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-slate-800 text-slate-400 border border-slate-700'}">${item.rkf}</span>
-                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">${item.tipePengadaan}</span>
+                <span class="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded ${isRkf ? 'bg-[#DDF1E4] text-[#00693A] border border-[#A8D8BC]' : 'bg-[#E4F1E8] text-[#4B6B5B] border border-[#B9D8C4]'}">${item.rkf}</span>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-[#E4F1E8] text-[#4B6B5B] border border-[#B9D8C4]">${item.tipePengadaan}</span>
               </div>
             </td>
-            <td class="p-3 text-xs text-indigo-300 font-semibold max-w-[140px] truncate">${item.outputProject || '-'}</td>
+            <td class="p-3 text-xs text-[#4047B0] font-semibold max-w-[140px] truncate">${item.outputProject || '-'}</td>
             <td class="p-3">
-              <div class="font-bold text-slate-200">${item.vendor}</div>
-              <div class="text-[10px] text-slate-400 font-mono">PIC: ${item.pic}</div>
+              <div class="font-bold text-[#1D4636]">${item.vendor}</div>
+              <div class="text-[10px] text-[#4B6B5B] font-mono">PIC: ${item.pic}</div>
             </td>
-            <td class="p-3 text-right font-mono font-bold text-emerald-400">${formatRupiah(item.cost)}</td>
+            <td class="p-3 text-right font-mono font-bold text-[#00793F]">${formatRupiah(item.cost)}</td>
             <td class="p-3 font-mono text-[11px]">
-              <div class="text-slate-400">Start: ${item.startKontrak || '-'}</div>
-              <div class="${isUrgent ? 'text-rose-400 font-bold' : 'text-slate-300'}">Due: ${item.endKontrak || '-'}</div>
+              <div class="text-[#4B6B5B]">Start: ${item.startKontrak || '-'}</div>
+              <div class="${isUrgent ? 'text-[#C0392B] font-bold' : 'text-[#2F5545]'}">Due: ${item.endKontrak || '-'}</div>
             </td>
             <td class="p-3 text-center">
               ${getStatusBadgeHtml(item.status)}
             </td>
             <td class="p-3 text-center" onclick="event.stopPropagation()">
               ${hasUrl ? `
-                <a href="${item.detailUrl}" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-950/60 hover:bg-emerald-900 text-emerald-300 border border-emerald-800 text-[10px] font-bold">
+                <a href="${item.detailUrl}" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#DDF1E4]/60 hover:bg-[#C5E6D1] text-[#00693A] border border-[#A8D8BC] text-[10px] font-bold">
                   <i data-lucide="file-text" class="w-3 h-3"></i><span>Dokumen</span>
                 </a>
-              ` : `<span class="text-slate-600">-</span>`}
+              ` : `<span class="text-[#8FA99B]">-</span>`}
             </td>
-            <td class="p-3 text-[11px] text-slate-300 max-w-xs line-clamp-2">${item.nextAction || item.deskripsi || '-'}</td>
+            <td class="p-3 text-[11px] text-[#2F5545] max-w-xs line-clamp-2">${item.nextAction || item.deskripsi || '-'}</td>
             <td class="p-3 text-center" onclick="event.stopPropagation()">
-              <button onclick="openDetailModal('${item.id}')" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white cursor-pointer"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i></button>
+              <button onclick="openDetailModal('${item.id}')" class="p-1.5 rounded-lg bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#2F5545] hover:text-[#12392A] cursor-pointer"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i></button>
             </td>
           </tr>
         `;
@@ -1492,15 +1492,15 @@
           type: 'bar',
           data: {
             labels: sortedVendors.map(v => v.length > 20 ? v.substring(0, 18) + '...' : v),
-            datasets: [{ label: 'Biaya (Rp)', data: sortedVendors.map(v => vendorCosts[v]), backgroundColor: '#059669', borderRadius: 6 }]
+            datasets: [{ label: 'Biaya (Rp)', data: sortedVendors.map(v => vendorCosts[v]), backgroundColor: ['#00793F','#22A861','#F5B800','#9FD8B4','#0F8F85'], borderRadius: 6 }]
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: { legend: { display: false } },
             scales: {
-              x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { display: false } },
-              y: { ticks: { color: '#94a3b8', callback: (val) => (val >= 1e9 ? (val/1e9).toFixed(1)+' M' : (val/1e6).toFixed(0)+' Jt') }, grid: { color: '#334155' } }
+              x: { ticks: { color: '#4B6B5B', font: { size: 10 } }, grid: { display: false } },
+              y: { ticks: { color: '#4B6B5B', callback: (val) => (val >= 1e9 ? (val/1e9).toFixed(1)+' M' : (val/1e6).toFixed(0)+' Jt') }, grid: { color: '#DCEBE1' } }
             }
           }
         });
@@ -1520,13 +1520,13 @@
           type: 'doughnut',
           data: {
             labels: ['On going', 'Selesai / Done', 'Lainnya / Hold'],
-            datasets: [{ data: [ongoingCount, doneCount, otherCount], backgroundColor: ['#2563eb', '#059669', '#d97706'], borderWidth: 0 }]
+            datasets: [{ data: [ongoingCount, doneCount, otherCount], backgroundColor: ['#1E6FBF', '#00793F', '#F5B800'], borderWidth: 2, borderColor: '#FFFFFF' }]
           },
           options: {
             responsive: true,
             maintainAspectRatio: false,
             cutout: '60%',
-            plugins: { legend: { position: 'right', labels: { color: '#cbd5e1', font: { size: 10 } } } }
+            plugins: { legend: { position: 'right', labels: { color: '#2F5545', font: { size: 10 } } } }
           }
         });
       }
@@ -1565,16 +1565,16 @@
       tbody.innerHTML = filtered.map((item, idx) => {
         const growth = item.cost2026 > 0 ? ((item.forecastingCost2027 - item.cost2026) / item.cost2026) * 100 : 100;
         return `
-          <tr class="hover:bg-slate-800/40 transition">
-            <td class="p-3 text-center font-mono text-slate-500">${item.no || idx + 1}</td>
-            <td class="p-3 font-bold text-white">${item.produk}</td>
+          <tr class="hover:bg-[#E4F1E8]/40 transition">
+            <td class="p-3 text-center font-mono text-[#6B8A7A]">${item.no || idx + 1}</td>
+            <td class="p-3 font-bold text-[#12392A]">${item.produk}</td>
             <td class="p-3 text-center">
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${item.anggaran === 'CAPEX' ? 'bg-blue-950 text-blue-300 border border-blue-800' : 'bg-emerald-950 text-emerald-300 border border-emerald-800'}">${item.anggaran}</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${item.anggaran === 'CAPEX' ? 'bg-[#E3F0FB] text-[#1B5E9E] border border-[#B5D4F0]' : 'bg-[#DDF1E4] text-[#00693A] border border-[#A8D8BC]'}">${item.anggaran}</span>
             </td>
-            <td class="p-3 text-center font-mono text-slate-400">${item.mataAnggaran || '-'}</td>
-            <td class="p-3 text-right font-mono font-bold text-emerald-400">${formatRupiah(item.cost2026)}</td>
-            <td class="p-3 text-right font-mono font-bold text-blue-400">${formatRupiah(item.forecastingCost2027)}</td>
-            <td class="p-3 text-center font-mono font-bold text-purple-400">+${growth.toFixed(0)}%</td>
+            <td class="p-3 text-center font-mono text-[#4B6B5B]">${item.mataAnggaran || '-'}</td>
+            <td class="p-3 text-right font-mono font-bold text-[#00793F]">${formatRupiah(item.cost2026)}</td>
+            <td class="p-3 text-right font-mono font-bold text-[#1E6FBF]">${formatRupiah(item.forecastingCost2027)}</td>
+            <td class="p-3 text-center font-mono font-bold text-[#7B3FC4]">+${growth.toFixed(0)}%</td>
           </tr>
         `;
       }).join('');
@@ -1584,9 +1584,9 @@
       activeAnggaranFilter = val;
       ['all', 'opex', 'capex'].forEach(t => {
         const btn = document.getElementById(`af-${t}`);
-        if (btn) btn.className = 'px-3 py-1 rounded-lg text-slate-400 hover:text-white';
+        if (btn) btn.className = 'px-3 py-1 rounded-lg text-[#4B6B5B] hover:text-[#12392A]';
       });
-      document.getElementById(`af-${val.toLowerCase()}`).className = 'px-3 py-1 rounded-lg bg-emerald-600 text-white shadow-xs';
+      document.getElementById(`af-${val.toLowerCase()}`).className = 'px-3 py-1 rounded-lg bg-[#00793F] text-white shadow-xs';
       renderAnggaranTable();
     }
 
@@ -1621,25 +1621,25 @@
       tbody.innerHTML = filtered.map((item, idx) => {
         const hasTable = item.statusTable && item.statusTable.includes('pgd-prd');
         return `
-          <tr class="hover:bg-slate-800/40 transition">
-            <td class="p-3 text-center font-mono text-slate-500">${item.no || idx + 1}</td>
-            <td class="p-3 text-center font-mono"><span class="px-2 py-1 rounded bg-slate-900 border border-slate-800 font-bold text-white">${item.idTiket}</span></td>
+          <tr class="hover:bg-[#E4F1E8]/40 transition">
+            <td class="p-3 text-center font-mono text-[#6B8A7A]">${item.no || idx + 1}</td>
+            <td class="p-3 text-center font-mono"><span class="px-2 py-1 rounded bg-[#FFFFFF] border border-[#CFE5D6] font-bold text-[#12392A]">${item.idTiket}</span></td>
             <td class="p-3">
-              <div class="font-bold text-white">${item.nama}</div>
-              <div class="text-[10px] text-emerald-400 font-medium">Output: ${item.output}</div>
+              <div class="font-bold text-[#12392A]">${item.nama}</div>
+              <div class="text-[10px] text-[#00793F] font-medium">Output: ${item.output}</div>
             </td>
             <td class="p-3 text-center">
-              ${item.linkTiket && item.linkTiket !== '#' ? `<a href="${item.linkTiket}" target="_blank" class="px-2 py-1 rounded bg-blue-950 text-blue-300 text-[10px] font-bold hover:underline">Jira Ticket</a>` : '-'}
+              ${item.linkTiket && item.linkTiket !== '#' ? `<a href="${item.linkTiket}" target="_blank" class="px-2 py-1 rounded bg-[#E3F0FB] text-[#1B5E9E] text-[10px] font-bold hover:underline">Jira Ticket</a>` : '-'}
             </td>
             <td class="p-3 font-mono text-[11px]">
               ${hasTable ? `
-                <div class="flex items-center justify-between gap-1 p-1 rounded bg-slate-950 border border-slate-800">
-                  <span class="text-emerald-400 truncate">${item.statusTable}</span>
-                  <button onclick="navigator.clipboard.writeText('${item.statusTable}'); alert('Tersalin: ${item.statusTable}');" class="p-1 text-slate-400 hover:text-white" title="Salin Table ID"><i data-lucide="copy" class="w-3 h-3"></i></button>
+                <div class="flex items-center justify-between gap-1 p-1 rounded bg-[#F2F9F4] border border-[#CFE5D6]">
+                  <span class="text-[#00793F] truncate">${item.statusTable}</span>
+                  <button onclick="navigator.clipboard.writeText('${item.statusTable}'); alert('Tersalin: ${item.statusTable}');" class="p-1 text-[#4B6B5B] hover:text-[#12392A]" title="Salin Table ID"><i data-lucide="copy" class="w-3 h-3"></i></button>
                 </div>
-              ` : `<span class="text-rose-400 font-bold">${item.statusTable}</span>`}
+              ` : `<span class="text-[#C0392B] font-bold">${item.statusTable}</span>`}
             </td>
-            <td class="p-3 text-slate-300 text-xs">${item.keteranganStatus}</td>
+            <td class="p-3 text-[#2F5545] text-xs">${item.keteranganStatus}</td>
           </tr>
         `;
       }).join('');
@@ -1650,10 +1650,10 @@
       activeDatamartFilter = val;
       ['all', 'done', 'prog', 'rej'].forEach(t => {
         const btn = document.getElementById(`df-${t}`);
-        if (btn) btn.className = 'px-3 py-1 rounded-lg text-slate-400 hover:text-white';
+        if (btn) btn.className = 'px-3 py-1 rounded-lg text-[#4B6B5B] hover:text-[#12392A]';
       });
       const activeMap = { ALL: 'df-all', DONE: 'df-done', IN_PROGRESS: 'df-prog', REJECTED: 'df-rej' };
-      document.getElementById(activeMap[val]).className = 'px-3 py-1 rounded-lg bg-emerald-600 text-white shadow-xs';
+      document.getElementById(activeMap[val]).className = 'px-3 py-1 rounded-lg bg-[#00793F] text-white shadow-xs';
       renderDatamartTable();
     }
 
@@ -1679,7 +1679,7 @@
       }
 
       if (!filtered.length) {
-        tbody.innerHTML = `<tr><td colspan="8" class="p-8 text-center text-xs text-slate-500">Tidak ada data promo yang cocok dengan pencarian "${search}".</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="8" class="p-8 text-center text-xs text-[#6B8A7A]">Tidak ada data promo yang cocok dengan pencarian "${search}".</td></tr>`;
         return;
       }
 
@@ -1688,49 +1688,49 @@
         const persentase = item.persentasePenyerapan || 0;
 
         const codesHtml = (item.kodePromo || '').split(',').map(c => `
-          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-purple-950/70 border border-purple-800/80 text-purple-300 font-mono text-[11px] font-semibold">
-            <i data-lucide="tag" class="w-2.5 h-2.5 text-purple-400"></i>
+          <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#F1E8FB]/70 border border-[#D4BDF0]/80 text-[#6B33B0] font-mono text-[11px] font-semibold">
+            <i data-lucide="tag" class="w-2.5 h-2.5 text-[#7B3FC4]"></i>
             ${c.trim()}
           </span>
         `).join('');
 
         return `
-          <tr class="hover:bg-slate-800/40 transition">
-            <td class="p-3.5 text-center font-mono font-bold text-slate-400">${item.no || idx + 1}</td>
+          <tr class="hover:bg-[#E4F1E8]/40 transition">
+            <td class="p-3.5 text-center font-mono font-bold text-[#4B6B5B]">${item.no || idx + 1}</td>
             <td class="p-3.5">
-              <div class="font-bold text-slate-100 text-[13px] leading-snug">${item.namaPromo}</div>
+              <div class="font-bold text-[#12392A] text-[13px] leading-snug">${item.namaPromo}</div>
             </td>
             <td class="p-3.5">
-              <p class="text-slate-300 text-xs leading-relaxed line-clamp-3">${item.deskripsi}</p>
+              <p class="text-[#2F5545] text-xs leading-relaxed line-clamp-3">${item.deskripsi}</p>
             </td>
             <td class="p-3.5">
               <div class="flex flex-wrap gap-1">${codesHtml}</div>
             </td>
             <td class="p-3.5 text-center">
               ${hasUrl ? `
-                <a href="${item.linkDokumen}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-teal-950/60 hover:bg-teal-900/80 text-teal-300 border border-teal-800 text-[11px] font-bold transition shadow-2xs" title="${item.linkDokumen}">
-                  <i data-lucide="folder-open" class="w-3.5 h-3.5 text-teal-400"></i>
+                <a href="${item.linkDokumen}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#DFF4F1]/60 hover:bg-[#CBEBE6]/80 text-[#0F766E] border border-[#A8DDD6] text-[11px] font-bold transition shadow-2xs" title="${item.linkDokumen}">
+                  <i data-lucide="folder-open" class="w-3.5 h-3.5 text-[#0F8F85]"></i>
                   <span>Buka Drive</span>
                   <i data-lucide="external-link" class="w-2.5 h-2.5 opacity-70"></i>
                 </a>
-              ` : `<span class="text-slate-600 font-mono text-xs">-</span>`}
+              ` : `<span class="text-[#8FA99B] font-mono text-xs">-</span>`}
             </td>
             <td class="p-3.5 text-right font-mono">
-              <div class="font-bold text-white text-[13px]">${formatRupiah(item.budgeting)}</div>
+              <div class="font-bold text-[#12392A] text-[13px]">${formatRupiah(item.budgeting)}</div>
             </td>
             <td class="p-3.5 text-right font-mono">
-              <div class="font-bold text-emerald-400 text-[13px]">${formatRupiah(item.penyerapanBudgeting)}</div>
+              <div class="font-bold text-[#00793F] text-[13px]">${formatRupiah(item.penyerapanBudgeting)}</div>
               ${item.budgeting > 0 ? `
                 <div class="flex items-center justify-end gap-1.5 mt-1">
-                  <div class="w-16 bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                    <div class="h-full rounded-full ${persentase >= 100 ? 'bg-amber-400' : 'bg-emerald-400'}" style="width: ${Math.min(persentase, 100)}%"></div>
+                  <div class="w-16 bg-[#E4F1E8] h-1.5 rounded-full overflow-hidden">
+                    <div class="h-full rounded-full ${persentase >= 100 ? 'bg-[#F5B800]' : 'bg-[#22A861]'}" style="width: ${Math.min(persentase, 100)}%"></div>
                   </div>
-                  <span class="text-[10px] text-slate-400 font-semibold">${persentase}%</span>
+                  <span class="text-[10px] text-[#4B6B5B] font-semibold">${persentase}%</span>
                 </div>
               ` : ''}
             </td>
             <td class="p-3.5 text-center">
-              <button onclick="openAuditModal('${item.no}')" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition cursor-pointer" title="Lihat Detail Lengkap">
+              <button onclick="openAuditModal('${item.no}')" class="p-1.5 rounded-lg bg-[#E4F1E8] hover:bg-[#D3E8DA] text-[#2F5545] hover:text-[#12392A] transition cursor-pointer" title="Lihat Detail Lengkap">
                 <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
               </button>
             </td>
@@ -1751,8 +1751,8 @@
 
       const codesContainer = document.getElementById('auditModalCodes');
       codesContainer.innerHTML = (item.kodePromo || '').split(',').map(c => `
-        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-purple-950 border border-purple-800 text-purple-300 font-mono text-xs font-bold">
-          <i data-lucide="tag" class="w-3 h-3 text-purple-400"></i>
+        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#F1E8FB] border border-[#D4BDF0] text-[#6B33B0] font-mono text-xs font-bold">
+          <i data-lucide="tag" class="w-3 h-3 text-[#7B3FC4]"></i>
           ${c.trim()}
         </span>
       `).join('');
@@ -1827,7 +1827,7 @@
       const isRkf = item.rkf === 'RKF';
       const rkfPill = document.getElementById('modalRkfPill');
       rkfPill.innerText = item.rkf;
-      rkfPill.className = `px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border ${isRkf ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-slate-800 text-slate-300 border border-slate-700'}`;
+      rkfPill.className = `px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase border ${isRkf ? 'bg-[#DDF1E4] text-[#00693A] border border-[#A8D8BC]' : 'bg-[#E4F1E8] text-[#2F5545] border border-[#B9D8C4]'}`;
 
       document.getElementById('modalTipePill').innerText = `${item.tipePengadaan} • ${item.tipeProject}`;
       
